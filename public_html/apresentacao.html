@@ -1,87 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>apresentação</title>
+    <link rel="stylesheet" href="/public_html/css/apresentacao.css">
+    <link rel="stylesheet" href="/public_html/css/style.css">
+
+    <title>Sistema de Monitoramento Industrial</title>
 </head>
 
 <body class="apre">
 
     <main class="apresentacao-container">
 
-        <section class="apresentacao-topo">
-            <small class="subtitulo">Projeto de Conclusão de Curso - TCC</small>
-            <h1>Sistema de Monitoramento Industrial</h1>
-            <p class="descricao-topo">Plataforma integrada para monitoramento industrial em tempo real
-                utilizando IoT, web e mobile.</p>
+        <!-- HERO -->
+
+        <section class="hero-apresentacao">
+
+            <span class="hero-badge">
+                Projeto de Conclusão de Curso - TCC
+            </span>
+
+            <h1>
+                Sistema de Monitoramento Industrial
+            </h1>
+
+            <p>
+                Plataforma integrada para monitoramento em tempo real utilizando
+                IoT, Arduino, Web e Mobile.
+            </p>
+
         </section>
 
-        <section class="bloco">
-            <h2>Problema</h2>
-            <p>Mesmo com o controle de estoque já estruturado, ambientes industriais ainda enfrentam desafios como: falta de monitoramento contínuo das condições de trabalho, falhas na comunicação entre setores e dificuldade de acompanhar a produção em tempo real.</p>
-        </section>
+        <!-- MÉTRICAS -->
 
-        <section class="bloco">
-            <h2>Para quem?</h2>
-            <div class="grid-cards">
-                <div class="mini-card">Indústrias com controle de estoque</div>
-                <div class="mini-card">Gestores de produção</div>
-                <div class="mini-card">Supervisores</div>
-                <div class="mini-card">Trabalhadores</div>
+        <section class="metricas">
+
+            <div class="metrica-card">
+                <span>Sensores Ativos</span>
+                <h3>48</h3>
             </div>
+
+            <div class="metrica-card">
+                <span>Leituras Hoje</span>
+                <h3>12.584</h3>
+            </div>
+
+            <div class="metrica-card">
+                <span>Alertas</span>
+                <h3>07</h3>
+            </div>
+
+            <div class="metrica-card">
+                <span>Disponibilidade</span>
+                <h3>99,8%</h3>
+            </div>
+
         </section>
 
+        <!-- PROBLEMA -->
+
         <section class="bloco">
-            <h2>Solução</h2>
-            <p class="texto-secao"> Desenvolvimento de um sistema integrado voltado ao monitoramento do ambiente produtivo.</p>
+
+            <h2>Problema</h2>
+
+            <p>
+                Ambientes industriais enfrentam dificuldades relacionadas ao
+                monitoramento contínuo das condições de trabalho, comunicação
+                entre setores e acompanhamento da produção em tempo real.
+            </p>
+
+        </section>
+
+        <!-- PÚBLICO -->
+
+        <section class="bloco">
+
+            <h2>Para Quem</h2>
 
             <div class="grid-cards">
+
+                <div class="mini-card">
+                    Indústrias com controle de estoque
+                </div>
+
+                <div class="mini-card">
+                    Gestores de Produção
+                </div>
+
+                <div class="mini-card">
+                    Supervisores
+                </div>
+
+                <div class="mini-card">
+                    Trabalhadores
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SOLUÇÃO -->
+
+        <section class="bloco">
+
+            <h2>Solução</h2>
+
+            <div class="grid-cards">
+
                 <div class="mini-card">Sensores IoT</div>
                 <div class="mini-card">Arduino</div>
                 <div class="mini-card">Back-end</div>
+                <div class="mini-card">Banco de Dados</div>
                 <div class="mini-card">Plataforma Web</div>
                 <div class="mini-card">Aplicativo Mobile</div>
-                <div class="mini-card">Alertas automáticos</div>
+
             </div>
 
-            <div class="info-box">Os dados são coletados em tempo real e enviados ao sistema via internet, permitindo acompanhamento contínuo e tomada de decisão rápida.
+            <div class="info-box">
+
+                Os dados coletados são enviados em tempo real para o sistema,
+                permitindo monitoramento contínuo e tomada de decisão rápida.
+
             </div>
+
         </section>
 
+        <!-- FLUXO -->
+
         <section class="bloco">
+
+            <h2>Fluxo do Sistema</h2>
+
+            <div class="fluxo">
+
+                <div class="fluxo-item">
+                    <h3>1</h3>
+                    <p>Coleta de dados pelos sensores.</p>
+                </div>
+
+                <div class="fluxo-item">
+                    <h3>2</h3>
+                    <p>Processamento via Arduino.</p>
+                </div>
+
+                <div class="fluxo-item">
+                    <h3>3</h3>
+                    <p>Armazenamento em banco de dados.</p>
+                </div>
+
+                <div class="fluxo-item">
+                    <h3>4</h3>
+                    <p>Visualização Web e Mobile.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD -->
+
+        <section class="bloco">
+
             <h2>Monitoramento em Tempo Real</h2>
-<!-- https://github.com/Gabriela-Moura/TCC/blob/main/grafico1_pronto.html temperatura e umidade-->
 
-            <div class="grafico-demo">
-                <div class="linha-grafico"></div>
+            <div class="dashboard-grid">
+
+                <div class="grafico-card">
+
+                    <div class="grafico-header">
+                        <h3>Temperatura Média</h3>
+                        <span>Últimas 12 horas</span>
+                    </div>
+
+                    <div class="grafico-demo">
+
+                        <div class="linha-temperatura"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="status-card">
+
+                    <h3>Sensores</h3>
+
+                    <div class="status-item">
+                        <span>Temperatura</span>
+                        <strong>Online</strong>
+                    </div>
+
+                    <div class="status-item">
+                        <span>Umidade</span>
+                        <strong>Online</strong>
+                    </div>
+
+                    <div class="status-item">
+                        <span>Ruído</span>
+                        <strong>Online</strong>
+                    </div>
+
+                    <div class="status-item">
+                        <span>Qualidade do Ar</span>
+                        <strong>Online</strong>
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
 
+        <!-- DIFERENCIAIS -->
+
         <section class="bloco">
-            <h2>Diferencial</h2>
 
-            <div class="lista-grid">
-                <ul>
-                    <li>Integração entre ambiente físico e digital</li>
-                    <li>Alertas preventivos automáticos</li>
-                    <li>Uso combinado de IoT, web e mobile</li>
-                </ul>
+            <h2>Diferenciais</h2>
 
-                <ul>
-                    <li>Monitoramento em tempo real</li>
-                    <li>Gráficos e relatórios</li>
-                    <li>Complementa sistemas existentes</li>
-                </ul>
+            <div class="grid-cards">
+
+                <div class="mini-card">
+                    Monitoramento em tempo real
+                </div>
+
+                <div class="mini-card">
+                    Alertas automáticos
+                </div>
+
+                <div class="mini-card">
+                    Integração IoT + Web + Mobile
+                </div>
+
+                <div class="mini-card">
+                    Relatórios e gráficos
+                </div>
+
             </div>
+
         </section>
 
+        <!-- TECNOLOGIAS -->
+
         <section class="bloco">
+
             <h2>Tecnologias Utilizadas</h2>
 
             <div class="tech-grid">
+
                 <div class="tech-card">
                     <span>Hardware</span>
                     <h3>Arduino</h3>
@@ -101,50 +267,9 @@
                     <span>Front-end</span>
                     <h3>HTML/CSS/JS</h3>
                 </div>
-            </div>
-        </section>
 
-        <section class="bloco estrutura">
-            <div class="estrutura-card">
-                <h3>Módulos Principais</h3>
-
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Gráficos</li>
-                    <li>Alertas</li>
-                    <li>Relatórios</li>
-                </ul>
             </div>
 
-            <div class="estrutura-card">
-                <h3>Funcionalidades</h3>
-
-                <ul>
-                    <li>Gestão de sensores</li>
-                    <li>Configurações</li>
-                    <li>Autenticação</li>
-                    <li>Aplicativo mobile</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="bloco">
-            <h2>Limite de Atuação</h2>
-
-            <div class="limites">
-                <div class="limite-item">Aplicado a ambientes industriais controlados</div>
-                <div class="limite-item">Não substitui normas regulamentadoras</div>
-                <div class="limite-item">Depende de infraestrutura estável</div>
-                <div class="limite-item">Não interfere no estoque existente</div>
-            </div>
-        </section>
-
-        <section class="cta-box">
-            <h2>Explore o Sistema Completo</h2>
-
-            <p>Acesse as páginas demonstrativas do sistema de monitoramento.</p>
-
-            <button class="btn btn-primary">Acessar Sistema</button>
         </section>
 
     </main>
