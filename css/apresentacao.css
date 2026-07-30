@@ -1,0 +1,429 @@
+/* ATHENA — Página de apresentação do TCC (apresentacao.html)
+   Depende de css/base.css (variáveis, reveal, animações) */
+
+.apre {
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+}
+
+.apre-topbar {
+    max-width: 1400px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.voltar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-size: 0.94rem;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.voltar-link:hover {
+    color: var(--ouro-forte);
+}
+
+.apresentacao-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    background: rgba(39, 49, 66, 0.92);
+
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra-suave), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.apresentacao-topo {
+    padding: 4rem;
+    border-bottom: 1px solid var(--borda);
+    position: relative;
+    overflow: hidden;
+}
+
+.apresentacao-topo::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: -8%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, var(--ouro-fraco), transparent 65%);
+}
+
+.apresentacao-topo h1 {
+    font-size: clamp(2.1rem, 3vw + 1rem, 4rem);
+    font-family: var(--fonte-titulo);
+    line-height: 1.1;
+    font-weight: 800;
+
+    margin-bottom: 1rem;
+    color: var(--cor-clara);
+    position: relative;
+}
+
+.subtitulo {
+    font-family: var(--fonte-classica);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ouro-forte);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.descricao-topo {
+    max-width: 800px;
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.bloco {
+    padding: 3rem 4rem;
+}
+
+.bloco h2 {
+    margin-bottom: 1.6rem;
+    font-size: clamp(1.5rem, 1.4vw + 1rem, 2.2rem);
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    color: var(--cor-clara);
+}
+
+.texto-secao {
+    margin-bottom: 2rem;
+    color: var(--texto-secundario);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.4rem;
+}
+
+.mini-card {
+    padding: 1.3rem 1.5rem;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio-sm);
+
+    color: var(--cor-clara);
+    font-size: 0.96rem;
+
+    transition: transform var(--transicao), background var(--transicao), border-color var(--transicao);
+}
+
+.mini-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.065);
+    border-color: var(--borda-forte);
+}
+
+.info-box {
+    margin-top: 2rem;
+
+    padding: 1.6rem 1.8rem;
+
+    border-radius: var(--raio-sm);
+
+    background: var(--ouro-fraco);
+
+    border: 1px solid rgba(201, 161, 90, 0.3);
+
+    color: var(--texto-secundario);
+    font-size: 0.96rem;
+}
+
+/* =========================================================
+   GRÁFICO DE MONITORAMENTO (exemplo real com Chart.js)
+   ========================================================= */
+
+.grafico-card {
+    border-radius: var(--raio-md);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+    border: 1px solid var(--borda);
+    padding: 1.8rem 2rem 2rem;
+}
+
+.grafico-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--texto-secundario);
+}
+
+.legenda-item i {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legenda-item.temp i {
+    background: var(--ouro-forte);
+}
+
+.legenda-item.umid i {
+    background: var(--info);
+}
+
+.grafico-wrap {
+    position: relative;
+    height: 320px;
+    width: 100%;
+}
+
+.grafico-nota {
+    margin-top: 1.2rem;
+    font-size: 0.86rem;
+    color: var(--texto-esmaecido);
+}
+
+.grafico-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.stat-mini {
+    padding: 1rem 1.2rem;
+    border-radius: var(--raio-sm);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--borda);
+}
+
+.stat-mini span {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--texto-esmaecido);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+}
+
+.stat-mini strong {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    color: var(--cor-clara);
+}
+
+.stat-mini strong.destaque {
+    color: var(--ouro-forte);
+}
+
+.lista-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.lista-grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-grid li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--texto-secundario);
+}
+
+.lista-grid li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ouro);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.4rem;
+}
+
+.tech-card {
+    padding: 1.8rem;
+
+    border-radius: var(--raio-md);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--borda);
+    text-align: center;
+
+    transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.tech-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--borda-forte);
+}
+
+.tech-card span {
+    color: var(--texto-secundario);
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.tech-card h3 {
+    margin-top: 0.7rem;
+    font-size: 1.7rem;
+    font-family: var(--fonte-titulo);
+    color: var(--ouro-forte);
+}
+
+.estrutura {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+}
+
+.estrutura-card {
+    padding: 1.9rem;
+
+    border-radius: var(--raio-md);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--borda);
+}
+
+.estrutura-card h3 {
+    margin-bottom: 1.3rem;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-clara);
+}
+
+.estrutura-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.estrutura-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.9rem;
+    color: var(--texto-secundario);
+}
+
+.estrutura-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--ouro);
+}
+
+.limites {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.limite-item {
+    padding: 1.1rem 1.4rem;
+
+    border-radius: var(--raio-sm);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid var(--borda);
+    border-left: 3px solid var(--ouro);
+
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.cta-box {
+    margin: 3rem 4rem 4rem;
+
+    padding: 3.5rem;
+
+    text-align: center;
+
+    border-radius: var(--raio-lg);
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--borda);
+}
+
+.cta-box h2 {
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.8rem);
+    margin-bottom: 1rem;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-clara);
+}
+
+.cta-box p {
+    max-width: 640px;
+    margin: 0 auto 2rem;
+
+    color: var(--texto-secundario);
+}
+
+@media (max-width: 900px) {
+
+    .estrutura,
+    .lista-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .apresentacao-topo,
+    .bloco {
+        padding: 2.2rem;
+    }
+
+    .cta-box {
+        margin: 2rem;
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .apre {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .apresentacao-topo,
+    .bloco {
+        padding: 1.6rem;
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grafico-card {
+        padding: 1.3rem 1.2rem 1.6rem;
+    }
+
+    .grafico-wrap {
+        height: 260px;
+    }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sistema de Monitoramento Industrial — TCC da Athenas Desenvolvimento de Sistemas.">
+    <meta name="theme-color" content="#161d27">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/apresentacao.css">
+    <title>Sistema de Monitoramento Industrial — Athena</title>
+</head>
+
+<body class="apre">
+    <div class="progresso-scroll"></div>
+
+    <div class="apre-topbar">
+        <a href="index.html" class="voltar-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Voltar para o site
+        </a>
+    </div>
+
+    <main class="apresentacao-container">
+
+        <section class="apresentacao-topo reveal">
+            <small class="subtitulo">Projeto de Conclusão de Curso - TCC</small>
+            <h1>Sistema de Monitoramento Industrial</h1>
+            <p class="descricao-topo">Plataforma integrada para monitoramento industrial em tempo real
+                utilizando IoT, web e mobile.</p>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Problema</h2>
+            <p>Mesmo com o controle de estoque já estruturado, ambientes industriais ainda enfrentam desafios como: falta de monitoramento contínuo das condições de trabalho, falhas na comunicação entre setores e dificuldade de acompanhar a produção em tempo real.</p>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Para quem?</h2>
+            <div class="grid-cards">
+                <div class="mini-card">Indústrias com controle de estoque</div>
+                <div class="mini-card">Gestores de produção</div>
+                <div class="mini-card">Supervisores</div>
+                <div class="mini-card">Trabalhadores</div>
+            </div>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Solução</h2>
+            <p class="texto-secao"> Desenvolvimento de um sistema integrado voltado ao monitoramento do ambiente produtivo.</p>
+
+            <div class="grid-cards">
+                <div class="mini-card">Sensores IoT</div>
+                <div class="mini-card">Arduino</div>
+                <div class="mini-card">Back-end</div>
+                <div class="mini-card">Plataforma Web</div>
+                <div class="mini-card">Aplicativo Mobile</div>
+                <div class="mini-card">Alertas automáticos</div>
+            </div>
+
+            <div class="info-box">Os dados são coletados em tempo real e enviados ao sistema via internet, permitindo acompanhamento contínuo e tomada de decisão rápida.
+            </div>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Monitoramento em Tempo Real</h2>
+            <p class="texto-secao">Exemplo de leitura de sensores IoT ao longo de um ciclo de 24 horas,
+                acompanhando temperatura e umidade do ambiente produtivo.</p>
+
+            <div class="grafico-stats">
+                <div class="stat-mini">
+                    <span>Temperatura máxima</span>
+                    <strong class="destaque" id="statMaxTemp">—</strong>
+                </div>
+                <div class="stat-mini">
+                    <span>Temperatura mínima</span>
+                    <strong id="statMinTemp">—</strong>
+                </div>
+                <div class="stat-mini">
+                    <span>Umidade média</span>
+                    <strong id="statMediaUmid">—</strong>
+                </div>
+            </div>
+
+            <div class="grafico-card">
+                <div class="grafico-legenda">
+                    <span class="legenda-item temp"><i></i> Temperatura (°C)</span>
+                    <span class="legenda-item umid"><i></i> Umidade (%)</span>
+                </div>
+                <div class="grafico-wrap">
+                    <canvas id="graficoMonitoramento" role="img"
+                        aria-label="Gráfico de temperatura e umidade ao longo de 24 horas"></canvas>
+                </div>
+                <p class="grafico-nota">Dados ilustrativos de um ciclo de 24h coletados por sensores IoT
+                    instalados no ambiente produtivo.</p>
+            </div>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Diferencial</h2>
+
+            <div class="lista-grid">
+                <ul>
+                    <li>Integração entre ambiente físico e digital</li>
+                    <li>Alertas preventivos automáticos</li>
+                    <li>Uso combinado de IoT, web e mobile</li>
+                </ul>
+
+                <ul>
+                    <li>Monitoramento em tempo real</li>
+                    <li>Gráficos e relatórios</li>
+                    <li>Complementa sistemas existentes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Tecnologias Utilizadas</h2>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span>Hardware</span>
+                    <h3>Arduino</h3>
+                </div>
+
+                <div class="tech-card">
+                    <span>Back-end</span>
+                    <h3>PHP</h3>
+                </div>
+
+                <div class="tech-card">
+                    <span>Banco de Dados</span>
+                    <h3>MySQL</h3>
+                </div>
+
+                <div class="tech-card">
+                    <span>Front-end</span>
+                    <h3>HTML/CSS/JS</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="bloco estrutura reveal">
+            <div class="estrutura-card">
+                <h3>Módulos Principais</h3>
+
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Gráficos</li>
+                    <li>Alertas</li>
+                    <li>Relatórios</li>
+                </ul>
+            </div>
+
+            <div class="estrutura-card">
+                <h3>Funcionalidades</h3>
+
+                <ul>
+                    <li>Gestão de sensores</li>
+                    <li>Configurações</li>
+                    <li>Autenticação</li>
+                    <li>Aplicativo mobile</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bloco reveal">
+            <h2>Limite de Atuação</h2>
+
+            <div class="limites">
+                <div class="limite-item">Aplicado a ambientes industriais controlados</div>
+                <div class="limite-item">Não substitui normas regulamentadoras</div>
+                <div class="limite-item">Depende de infraestrutura estável</div>
+                <div class="limite-item">Não interfere no estoque existente</div>
+            </div>
+        </section>
+
+        <section class="cta-box reveal">
+            <h2>Explore o Sistema Completo</h2>
+
+            <p>Acesse as páginas demonstrativas do sistema de monitoramento.</p>
+
+            <a href="index.html#contato" class="btn btn-primary">Acessar sistema</a>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/apresentacao.js"></script>
+</body>
+
+</html>
