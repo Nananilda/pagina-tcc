@@ -36,6 +36,9 @@
     --borda: rgba(247, 239, 216, 0.1);
     --borda-forte: rgba(247, 239, 216, 0.2);
 
+    /* cor fixa para texto sobre elementos dourados — não muda entre temas */
+    --sobre-acento: #171e28;
+
     --fonte-titulo: 'Raleway', sans-serif;
     --fonte-texto: 'Inter', sans-serif;
     --fonte-classica: 'Cormorant Garamond', serif;
@@ -46,6 +49,33 @@
 
     --sombra-suave: 0 20px 50px rgba(0, 0, 0, 0.28);
     --transicao: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================================================
+   TEMA CLARO
+   Alterna apenas as variáveis de cor — todo o resto do CSS
+   já é construído em cima delas, então herda automaticamente.
+   ========================================================= */
+[data-tema="claro"] {
+    --bg-0: #f7f4ec;
+    --bg-1: #fffdf8;
+    --bg-2: #efe8d6;
+    --bg-3: #e6dcc3;
+
+    --cor-clara: #21283a;
+    --texto: #21283a;
+    --texto-secundario: #565f74;
+    --texto-esmaecido: #767f92;
+
+    --cor-secundaria: #efe8d6;
+
+    --ouro-fraco: rgba(180, 132, 45, 0.12);
+    --info-fraco: rgba(48, 92, 133, 0.12);
+
+    --borda: rgba(33, 40, 58, 0.1);
+    --borda-forte: rgba(33, 40, 58, 0.18);
+
+    --sombra-suave: 0 20px 50px rgba(33, 40, 58, 0.12);
 }
 
 * {
@@ -66,6 +96,13 @@ body {
     color: var(--texto);
     line-height: 1.7;
     overflow-x: hidden;
+    transition: background var(--transicao), color var(--transicao);
+}
+
+/* trava o scroll enquanto a tela de carregamento inicial está ativa */
+body.carregando {
+    overflow: hidden;
+    height: 100vh;
 }
 
 img {
@@ -79,7 +116,7 @@ a {
 
 ::selection {
     background: var(--ouro);
-    color: var(--bg-0);
+    color: var(--sobre-acento);
 }
 
 /* barra de progresso de leitura */
@@ -196,15 +233,34 @@ header {
     top: 0;
     z-index: 1000;
 
-    backdrop-filter: blur(14px);
-    background: rgba(22, 29, 39, 0.82);
-    border-bottom: 1px solid var(--borda);
-    transition: box-shadow var(--transicao), background var(--transicao);
+    backdrop-filter: blur(0px);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: box-shadow var(--transicao), background var(--transicao),
+        backdrop-filter var(--transicao), border-color var(--transicao);
 }
 
 header.scrolled {
-    background: rgba(22, 29, 39, 0.96);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    background: rgba(22, 29, 39, 0.82);
+    border-bottom: 1px solid var(--borda);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+[data-tema="claro"] header.scrolled {
+    background: rgba(247, 244, 236, 0.82);
+}
+
+/* linha inferior com leve brilho dourado quando o vidro fosco entra em cena */
+header.scrolled::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ouro-forte) 50%, transparent);
+    opacity: 0.55;
 }
 
 .header-inner {
@@ -281,7 +337,7 @@ nav a.ativo {
 
 .header-btn {
     text-decoration: none;
-    color: var(--bg-0);
+    color: var(--sobre-acento);
 
     background: linear-gradient(135deg, var(--ouro-forte), var(--ouro));
     padding: 0.75rem 1.5rem;
@@ -297,6 +353,98 @@ nav a.ativo {
 .header-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(201, 161, 90, 0.34);
+}
+
+/* interruptor de tema (claro/escuro) */
+
+.tema-toggle {
+    position: relative;
+    flex-shrink: 0;
+    width: 56px;
+    height: 30px;
+    border-radius: 999px;
+    padding: 3px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(247, 239, 216, 0.08);
+    border: 1px solid var(--borda-forte);
+    cursor: pointer;
+    transition: background var(--transicao), border-color var(--transicao);
+}
+
+.tema-toggle:hover {
+    background: rgba(247, 239, 216, 0.14);
+}
+
+.tema-toggle-bolha {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, var(--ouro-forte), var(--ouro));
+    color: var(--sobre-acento);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    transform: translateX(0);
+    transition: transform var(--transicao);
+}
+
+[data-tema="claro"] .tema-toggle-bolha {
+    transform: translateX(26px);
+}
+
+.tema-toggle-bolha svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+.tema-toggle-bolha .icone-lua {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.6);
+}
+
+[data-tema="claro"] .tema-toggle-bolha .icone-sol {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.6);
+}
+
+[data-tema="claro"] .tema-toggle-bolha .icone-lua {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.tema-toggle-bolha .icone-sol {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* transição de círculo ao trocar de tema (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+    z-index: 1;
+}
+
+::view-transition-new(root) {
+    z-index: 2;
+}
+
+@media (max-width: 980px) {
+    .tema-toggle {
+        margin-right: 0.4rem;
+    }
 }
 
 /* menu hambúrguer (mobile) */
@@ -526,6 +674,146 @@ footer {
     }
 }
 
+/* =========================================================
+   TELA DE CARREGAMENTO (PRELOADER)
+   ========================================================= */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-0);
+}
+
+.preloader-conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.preloader.saindo .preloader-conteudo {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+}
+
+.preloader-svg {
+    width: 72px;
+    height: 72px;
+    overflow: visible;
+}
+
+.preloader-svg path {
+    fill: transparent;
+    stroke: var(--ouro-forte);
+    stroke-width: 3.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 6px rgba(232, 195, 124, 0.5));
+    transition: fill 0.4s ease 0.05s;
+}
+
+.preloader.preenchido .preloader-svg path {
+    fill: var(--ouro-forte);
+}
+
+.preloader-contador {
+    font-family: var(--fonte-titulo);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--texto-esmaecido);
+    min-width: 3ch;
+    text-align: center;
+}
+
+.preloader-cortina {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: var(--bg-0);
+    transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 1;
+}
+
+.preloader-cortina-cima {
+    top: 0;
+}
+
+.preloader-cortina-baixo {
+    bottom: 0;
+}
+
+.preloader.saindo .preloader-cortina-cima {
+    transform: translateY(-100%);
+}
+
+.preloader.saindo .preloader-cortina-baixo {
+    transform: translateY(100%);
+}
+
+.preloader-conteudo {
+    z-index: 2;
+}
+
+.preloader.oculto {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .preloader {
+        display: none;
+    }
+}
+
+/* conteúdo do herói entra em sequência assim que a cortina abre */
+
+.hero-entrada {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* só começa oculto quando o JS está ativo (garantido pela classe no <html>);
+   sem JS, o conteúdo do herói permanece visível desde o início */
+html.js .hero-entrada {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+body.carregado .hero-entrada {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.carregado .hero-badge {
+    transition-delay: 0.05s;
+}
+
+body.carregado .hero-left h1 {
+    transition-delay: 0.18s;
+}
+
+body.carregado .hero-left p {
+    transition-delay: 0.34s;
+}
+
+body.carregado .hero-actions {
+    transition-delay: 0.48s;
+}
+
+body.carregado .hero-stats {
+    transition-delay: 0.6s;
+}
+
+body.carregado .hero-visual {
+    transition-delay: 0.3s;
+}
+
 /* ANIMAÇÕES E ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
@@ -537,5 +825,16 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .hero-entrada {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-visual,
+    .card,
+    .score {
+        transform: none !important;
     }
 }
