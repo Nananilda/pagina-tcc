@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/apresentacao.css">
     <title>Sistema de Monitoramento Industrial — Athena</title>
+    <script>
+        document.documentElement.classList.add('js');
+        try {
+            var temaSalvo = localStorage.getItem('athena-tema');
+            if (temaSalvo === 'claro') document.documentElement.setAttribute('data-tema', 'claro');
+        } catch (erro) { /* localStorage indisponível — segue com o tema padrão */ }
+    </script>
 </head>
 
 <body class="apre">
