@@ -1,6 +1,118 @@
 // =========================================================
 // ATHENAS — interações do site
 // =========================================================
+
+const prefereReduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Tela de carregamento (preloader) ---------- */
+// Roda fora do DOMContentLoaded para começar a animar assim que possível.
+(() => {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) {
+    document.body.classList.remove('carregando');
+    return;
+  }
+
+  const finalizarSemAnimacao = () => {
+    preloader.classList.add('oculto');
+    document.body.classList.remove('carregando');
+    document.body.classList.add('carregado');
+  };
+
+  if (prefereReduzirMovimento) {
+    finalizarSemAnimacao();
+    return;
+  }
+
+  const traco = document.getElementById('preloaderTraco');
+  const contadorEl = document.getElementById('preloaderPct');
+
+  let comprimento = 260;
+  if (traco && traco.getTotalLength) {
+    comprimento = traco.getTotalLength();
+    traco.style.strokeDasharray = String(comprimento);
+    traco.style.strokeDashoffset = String(comprimento);
+    traco.style.transition = 'stroke-dashoffset 0.8s ease';
+  }
+
+  requestAnimationFrame(() => {
+    if (traco) traco.style.strokeDashoffset = '0';
+  });
+
+  // Contador de 0% a 100% acompanhando as fases de traço e preenchimento
+  const duracaoContador = 1150;
+  const inicioContador = performance.now();
+  const passoContador = (agora) => {
+    const progresso = Math.min((agora - inicioContador) / duracaoContador, 1);
+    if (contadorEl) contadorEl.textContent = Math.round(progresso * 100) + '%';
+    if (progresso < 1) requestAnimationFrame(passoContador);
+  };
+  requestAnimationFrame(passoContador);
+
+  // Fase 2: preenchimento sólido da logo
+  setTimeout(() => {
+    preloader.classList.add('preenchido');
+  }, 800);
+
+  // Fase 3: efeito cortina revelando o site + entrada escalonada do herói
+  setTimeout(() => {
+    preloader.classList.add('saindo');
+    document.body.classList.remove('carregando');
+    document.body.classList.add('carregado');
+  }, 1200);
+
+  // Remove o preloader do fluxo após a cortina terminar de abrir
+  setTimeout(() => {
+    preloader.classList.add('oculto');
+  }, 1850);
+})();
+
+/* ---------- Alternância de tema (claro/escuro) ---------- */
+(() => {
+  const botao = document.getElementById('temaToggle');
+  if (!botao) return;
+
+  const aplicarTema = (tema) => {
+    if (tema === 'claro') {
+      document.documentElement.setAttribute('data-tema', 'claro');
+    } else {
+      document.documentElement.removeAttribute('data-tema');
+    }
+    try { localStorage.setItem('athena-tema', tema); } catch (erro) { /* segue sem salvar */ }
+  };
+
+  botao.addEventListener('click', (evento) => {
+    const temaAtual = document.documentElement.getAttribute('data-tema') === 'claro' ? 'claro' : 'escuro';
+    const novoTema = temaAtual === 'claro' ? 'escuro' : 'claro';
+
+    const x = evento.clientX;
+    const y = evento.clientY;
+
+    if (prefereReduzirMovimento || !document.startViewTransition) {
+      aplicarTema(novoTema);
+      return;
+    }
+
+    const transicao = document.startViewTransition(() => aplicarTema(novoTema));
+    transicao.ready.then(() => {
+      const raio = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+      document.documentElement.animate(
+        {
+          clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${raio}px at ${x}px ${y}px)`],
+        },
+        {
+          duration: 650,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          pseudoElement: '::view-transition-new(root)',
+        }
+      );
+    });
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Barra de progresso de leitura ---------- */
@@ -230,4 +342,72 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Ano automático no rodapé ---------- */
   const anoEl = document.querySelector('[data-ano]');
   if (anoEl) anoEl.textContent = new Date().getFullYear();
+
+  /* ---------- Paralaxe do painel visual do herói (movimento do mouse) ---------- */
+  const heroVisual = document.getElementById('heroVisual');
+
+  if (heroVisual && !prefereReduzirMovimento && window.matchMedia('(hover: hover)').matches) {
+    const wrap = heroVisual.closest('.hero-visual-wrap');
+    const inclinacaoMax = 8;
+
+    wrap.addEventListener('mousemove', (evento) => {
+      const retangulo = wrap.getBoundingClientRect();
+      const relX = (evento.clientX - retangulo.left) / retangulo.width - 0.5;
+      const relY = (evento.clientY - retangulo.top) / retangulo.height - 0.5;
+
+      heroVisual.style.setProperty('--tilt-y', (relX * inclinacaoMax) + 'deg');
+      heroVisual.style.setProperty('--tilt-x', (relY * -inclinacaoMax) + 'deg');
+    });
+
+    wrap.addEventListener('mouseleave', () => {
+      heroVisual.style.setProperty('--tilt-x', '0deg');
+      heroVisual.style.setProperty('--tilt-y', '0deg');
+    });
+  }
+
+  /* ---------- Círculos de performance (seção Diferenciais) ---------- */
+  const scores = document.querySelectorAll('.score');
+
+  if (scores.length) {
+    const animarScore = (el) => {
+      const alvo = parseFloat(el.dataset.alvo) || 0;
+      const circulo = el.querySelector('.score-progresso');
+      const numeroEl = el.querySelector('.score-numero');
+
+      let comprimento = 326.7;
+      if (circulo) {
+        const raio = circulo.r.baseVal.value;
+        comprimento = 2 * Math.PI * raio;
+        circulo.style.strokeDasharray = String(comprimento);
+      }
+
+      const duracao = 1400;
+      const inicio = performance.now();
+
+      const passo = (agora) => {
+        const progresso = Math.min((agora - inicio) / duracao, 1);
+        const facilitado = 1 - Math.pow(1 - progresso, 3);
+        const valorAtual = alvo * facilitado;
+
+        if (circulo) {
+          circulo.style.strokeDashoffset = String(comprimento * (1 - valorAtual / 100));
+        }
+        if (numeroEl) numeroEl.textContent = Math.round(valorAtual);
+
+        if (progresso < 1) requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    };
+
+    const observerScore = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          animarScore(entrada.target);
+          observerScore.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    scores.forEach(s => observerScore.observe(s));
+  }
 });
