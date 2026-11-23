@@ -151,7 +151,7 @@
     }
 
     /* ---------- Vídeo ---------- */
-    var vid = $('#video'), cover = $('#videoCover');
+    var vid = $('#videoPlayer'), cover = $('#videoCover');
     if (vid && cover) {
         function play() { cover.classList.add('hide'); var p = vid.play(); if (p && p.catch) p.catch(function () { }); }
         cover.addEventListener('click', play);
@@ -202,7 +202,9 @@
             if (msg.value.trim().length < 10) { setErr(msg, 'Escreva uma mensagem com pelo menos 10 caracteres.'); ok = false; }
             if (!ok) { status.className = 'form-status err'; status.textContent = 'Verifique os campos destacados.'; return; }
             var body = msg.value.trim() + '\n\n— ' + nome.value.trim() + ' (' + email.value.trim() + ')';
-            window.location.href = 'mailto:contato@athenas.com?subject=' + encodeURIComponent('Contato pelo site do Ákron') + '&body=' + encodeURIComponent(body);
+            var cfg = window.ATHENAS_CONFIG || {};
+            var to = cfg.email || 'contatoathenasdev@athenas.dev.br', assunto = cfg.assunto || 'Contato pelo site da Athenas';
+            window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(assunto) + '&body=' + encodeURIComponent(body);
             status.className = 'form-status ok';
             status.textContent = 'Abrindo o seu aplicativo de e-mail para finalizar o envio…';
         });
