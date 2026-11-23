@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athenas · Desenvolvimento de Sistemas</title>
-    <meta name="description" content="Athenas Desenvolvimento de Sistemas: soluções digitais personalizadas, com sistemas, websites e integrações entre plataformas. Conhecimento que impulsiona inovação. Criadora do Ákron, nosso TCC no SENAI Mococa-SP.">
+    <meta name="description" content="Athenas Desenvolvimento de Sistemas: iniciativa de desenvolvimento de soluções tecnológicas que unem criatividade, planejamento e conhecimento técnico. Conheça o Ákron e nossas propostas de projeto. Conhecimento que impulsiona inovação.">
     <meta name="theme-color" content="#0d1522">
     <meta property="og:title" content="Athenas · Conhecimento que impulsiona inovação">
-    <meta property="og:description" content="Soluções digitais personalizadas: sistemas, websites e integrações entre plataformas.">
+    <meta property="og:description" content="Soluções tecnológicas que unem criatividade, planejamento e conhecimento técnico.">
     <meta property="og:image" content="img/icon-512.png">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/projetos.css">
     <script>
         (function () {
             var d = document.documentElement, t = null;
@@ -20,11 +22,26 @@
             try { t = localStorage.getItem('athenas-tema'); } catch (e) { }
             if (!t) t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
             d.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            // tela de carregamento: só na primeira carga da sessão
+            var seen = false; try { seen = sessionStorage.getItem('athenas-intro') === '1'; } catch (e) { }
+            if (!seen) d.classList.add('has-loader');
         })();
     </script>
 </head>
 
 <body>
+    <!-- Tela de carregamento inicial -->
+    <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Carregando o site da Athenas">
+        <div class="loader-stage">
+            <div class="lg-mark" aria-hidden="true">
+                <span class="lg-part lg-wing-l"></span>
+                <span class="lg-part lg-wing-r"></span>
+                <span class="lg-part lg-body"></span>
+            </div>
+            <div class="lg-word">ATHENAS</div>
+            <p class="lg-slogan">Conhecimento que impulsiona inovação.</p>
+        </div>
+    </div>
 <!-- Ícones (sprite) -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <defs>
@@ -75,11 +92,11 @@
 
             <nav class="nav" id="nav" aria-label="Principal">
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#identidade">Identidade</a></li>
-                    <li><a href="#projeto">Ákron</a></li>
-                    <li><a href="#video">Vídeo</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#equipe">Equipe</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -117,13 +134,13 @@
                 <div>
                     <span class="pill reveal"><span class="dot"></span> Desenvolvimento de Sistemas · Mococa-SP</span>
                     <h1 class="reveal" style="--d:.08s">Conhecimento que <em>impulsiona inovação.</em></h1>
-                    <p class="hero-lead reveal" style="--d:.16s">A <strong>Athenas</strong> cria soluções digitais personalizadas, com sistemas, websites e integrações entre plataformas, para que empresas e projetos sociais trabalhem com mais organização, menos tarefas manuais e informação confiável.</p>
+                    <p class="hero-lead reveal" style="--d:.16s">A <strong>Athenas</strong> é uma iniciativa voltada ao desenvolvimento de soluções tecnológicas que unem criatividade, planejamento e conhecimento técnico. Por meio da análise de necessidades e da aplicação de diferentes tecnologias, buscamos transformar ideias em projetos capazes de gerar resultados e contribuir positivamente para diferentes contextos.</p>
                     <div class="hero-actions reveal" style="--d:.24s">
-                        <a href="apresentacao.html" class="btn btn-primary">Conheça o Ákron <svg class="arrow"><use href="#i-arrow" /></svg></a>
+                        <a href="#projetos" class="btn btn-primary">Conheça nossos projetos <svg class="arrow"><use href="#i-arrow" /></svg></a>
                         <a href="#video" class="btn btn-ghost"><svg style="width:16px;height:16px"><use href="#i-play" /></svg> Assistir ao vídeo</a>
                     </div>
                     <div class="hero-facts reveal" style="--d:.32s">
-                        <div><strong><span data-count="3">0</span></strong><span>frentes de atuação</span></div>
+                        <div><strong><span data-count="3">0</span></strong><span>projetos no portfólio</span></div>
                         <div><strong><span data-count="5">0</span></strong><span>integrantes na equipe</span></div>
                         <div><strong><span data-count="2026">0</span></strong><span>ano de fundação</span></div>
                     </div>
@@ -136,7 +153,7 @@
                         </svg>
                         <span class="logo-mask logo-ath-full" role="img" aria-label="Logo da Athenas: um A com asas. Conhecimento que impulsiona inovação"></span>
                         <span class="tag t1"><svg><use href="#i-code" /></svg> Sistemas</span>
-                        <span class="tag t2"><svg><use href="#i-monitor" /></svg> Websites</span>
+                        <span class="tag t2"><svg><use href="#i-monitor" /></svg> Web e mobile</span>
                         <span class="tag t3"><svg><use href="#i-link" /></svg> Integrações</span>
                     </div>
                 </div>
@@ -149,7 +166,8 @@
                 <div class="reveal">
                     <span class="eyebrow">Quem somos</span>
                     <h2 class="section-title">Uma startup que nasceu na sala de aula</h2>
-                    <p class="section-lead">A Athenas foi criada pelos autores no curso Técnico em Desenvolvimento de Sistemas do SENAI, em Mococa. Nossa função é desenvolver soluções digitais sob medida e, principalmente, entender o problema antes de escrever a primeira linha de código.</p>
+                    <p class="section-lead">Somos uma equipe de desenvolvimento que acredita na tecnologia como ferramenta de transformação. Trabalhamos de forma colaborativa, reunindo diferentes conhecimentos e habilidades para planejar, desenvolver e aprimorar soluções digitais. Cada projeto representa uma oportunidade de aprender, experimentar novas possibilidades e construir ferramentas que respondam a necessidades concretas.</p>
+                    <p class="section-lead" style="margin-top:12px">A Athenas nasceu no curso Técnico em Desenvolvimento de Sistemas do SENAI, em Mococa-SP.</p>
                     <p class="problem-quote">Resolver problemas com inteligência: planejar primeiro, construir depois.</p>
                 </div>
                 <div class="problem-list">
@@ -174,25 +192,40 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="eyebrow">O que fazemos</span>
-                    <h2 class="section-title wide">Soluções digitais pensadas para o seu contexto</h2>
-                    <p class="section-lead">Atuamos em empresas e em projetos sociais. Em todos os casos, o objetivo é o mesmo: otimizar a gestão, aumentar a produtividade e melhorar o controle das informações.</p>
+                    <h2 class="section-title wide">Soluções pensadas a partir de necessidades reais</h2>
+                    <p class="section-lead">Da análise do problema à entrega de uma solução, atuamos em todas as etapas e damos atenção especial à experiência de quem vai usar o sistema.</p>
                 </div>
 
                 <div class="grid g-3">
                     <article class="card reveal">
-                        <div class="icon-chip"><svg><use href="#i-code" /></svg></div>
-                        <h3>Sistemas personalizados</h3>
-                        <p>Aplicações desenhadas a partir da rotina de quem vai usá-las, com banco de dados bem modelado, regras de negócio claras e acesso controlado por perfil.</p>
+                        <div class="icon-chip"><svg><use href="#i-eye" /></svg></div>
+                        <h3>Análise de problemas</h3>
+                        <p>Antes de programar, observamos o contexto e identificamos o problema que realmente precisa ser resolvido.</p>
                     </article>
                     <article class="card reveal" style="--d:.08s">
-                        <div class="icon-chip gold"><svg><use href="#i-monitor" /></svg></div>
-                        <h3>Websites</h3>
-                        <p>Sites que funcionam bem no computador e no celular, com a identidade da sua marca e conteúdo organizado para ser entendido rápido.</p>
+                        <div class="icon-chip gold"><svg><use href="#i-report" /></svg></div>
+                        <h3>Levantamento de requisitos</h3>
+                        <p>Registramos o que o sistema precisa fazer e quais condições ele deve respeitar, com apoio de pesquisa e conversas.</p>
                     </article>
                     <article class="card reveal" style="--d:.16s">
-                        <div class="icon-chip"><svg><use href="#i-link" /></svg></div>
-                        <h3>Integração entre plataformas</h3>
-                        <p>Conectamos sistemas que já existem, por meio de APIs, para que a informação chegue a quem precisa sem digitação duplicada.</p>
+                        <div class="icon-chip"><svg><use href="#i-sliders" /></svg></div>
+                        <h3>Planejamento de sistemas</h3>
+                        <p>Definimos arquitetura, casos de uso e etapas de desenvolvimento para que cada decisão tenha uma razão.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="icon-chip gold"><svg><use href="#i-phone" /></svg></div>
+                        <h3>Aplicações web e mobile</h3>
+                        <p>Criamos aplicações para o computador e o celular, com foco na experiência do usuário: interfaces claras e fáceis de usar.</p>
+                    </article>
+                    <article class="card reveal" style="--d:.08s">
+                        <div class="icon-chip"><svg><use href="#i-db" /></svg></div>
+                        <h3>Bancos de dados</h3>
+                        <p>Estruturamos tabelas, relacionamentos e regras para que as informações sejam organizadas e confiáveis.</p>
+                    </article>
+                    <article class="card reveal" style="--d:.16s">
+                        <div class="icon-chip gold"><svg><use href="#i-link" /></svg></div>
+                        <h3>Integração de tecnologias</h3>
+                        <p>Conectamos sensores, servidores, bancos de dados e aplicações por meio de APIs e protocolos.</p>
                     </article>
                 </div>
 
@@ -209,14 +242,18 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="eyebrow">Como trabalhamos</span>
-                    <h2 class="section-title wide">Do problema à entrega, com método</h2>
-                    <p class="section-lead">Seguimos princípios da Engenharia de Software e práticas ágeis (Scrum). Cada decisão técnica pode ser rastreada até uma necessidade registrada no início do projeto.</p>
+                    <h2 class="section-title wide">Do problema à solução, com método</h2>
+                    <p class="section-lead">Os projetos não surgem apenas da programação: partem de um processo organizado de análise e desenvolvimento, apoiado em princípios da Engenharia de Software e em práticas ágeis (Scrum).</p>
                 </div>
                 <div class="method">
-                    <article class="card reveal"><h3>Entender</h3><p>Pesquisa do problema e levantamento de requisitos funcionais e não funcionais.</p></article>
-                    <article class="card reveal" style="--d:.06s"><h3>Planejar e modelar</h3><p>Casos de uso, modelagem de dados e arquitetura antes de programar.</p></article>
-                    <article class="card reveal" style="--d:.12s"><h3>Construir e testar</h3><p>Desenvolvimento em ciclos curtos, com testes que registram o que funcionou e o que foi corrigido.</p></article>
-                    <article class="card reveal" style="--d:.18s"><h3>Evoluir</h3><p>Sistemas modulares: correções e melhorias entram sem refazer toda a solução.</p></article>
+                    <article class="card reveal"><h3>Identificar o problema</h3><p>Observamos o contexto e definimos qual necessidade o projeto deve atender.</p></article>
+                    <article class="card reveal" style="--d:.06s"><h3>Pesquisar</h3><p>Estudamos o cenário, o público e as soluções que já existem.</p></article>
+                    <article class="card reveal" style="--d:.12s"><h3>Planejar</h3><p>Organizamos etapas, responsabilidades e tecnologias do projeto.</p></article>
+                    <article class="card reveal" style="--d:.18s"><h3>Definir requisitos</h3><p>Registramos requisitos funcionais e não funcionais que guiam o desenvolvimento.</p></article>
+                    <article class="card reveal"><h3>Prototipar</h3><p>Desenhamos telas e fluxos para validar ideias antes de programar.</p></article>
+                    <article class="card reveal" style="--d:.06s"><h3>Implementar</h3><p>Desenvolvemos o sistema em ciclos curtos, de forma colaborativa.</p></article>
+                    <article class="card reveal" style="--d:.12s"><h3>Testar</h3><p>Verificamos o funcionamento e registramos o que foi corrigido.</p></article>
+                    <article class="card reveal" style="--d:.18s"><h3>Aprimorar</h3><p>Ajustamos e evoluímos a solução a partir do que foi aprendido.</p></article>
                 </div>
             </div>
         </section>
@@ -260,24 +297,63 @@
             </div>
         </section>
 
-        <!-- ===================== PROJETO ÁKRON ===================== -->
-        <section id="projeto">
+        <!-- ===================== PROJETOS ===================== -->
+        <section id="projetos">
             <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Nosso primeiro projeto</span>
-                    <h2 class="section-title wide">O Ákron é o nosso TCC, criado pela Athenas</h2>
-                    <p class="section-lead">A Athenas é a empresa; o Ákron é o produto. Assim como uma empresa de tecnologia pode ter vários produtos, a Athenas poderá ter outros projetos, todos com nomes inspirados na cultura grega.</p>
+                <div class="section-head reveal projects-head">
+                    <span class="eyebrow">Nossos projetos</span>
+                    <h2 class="section-title wide">Do monitoramento industrial à proteção animal e ao apoio social</h2>
+                    <p class="section-lead">Cada projeto desenvolvido pela Athenas parte de uma necessidade e busca transformá-la em uma solução tecnológica. Nosso portfólio reúne iniciativas que exploram diferentes áreas de aplicação da tecnologia, desde o monitoramento industrial até propostas voltadas à proteção animal e ao apoio social. Conheça as soluções desenvolvidas e as ideias que estão em processo de planejamento.</p>
                 </div>
 
-                <div class="akron-feature reveal" data-brand="akron">
+                <!-- Projeto principal: Ákron -->
+                <article class="akron-feature proj-main reveal" data-brand="akron" aria-labelledby="akron-titulo">
                     <div class="logo-wrap"><span class="logo-mask logo-full" role="img" aria-label="Logo do Ákron"></span></div>
                     <div>
-                        <span class="eyebrow">Projeto de TCC · 2026</span>
-                        <h3>Sistema de monitoramento do ambiente de produção</h3>
-                        <p>Sensores IoT medem temperatura, umidade, ruído, qualidade do ar, pressão e radiação UV. Os dados chegam a um servidor, ficam guardados em banco de dados e aparecem em uma plataforma web e em um aplicativo móvel, com alertas quando algum limite é ultrapassado.</p>
-                        <div class="chips"><span class="chip">Internet das Coisas</span><span class="chip">Plataforma web</span><span class="chip">Aplicativo móvel</span><span class="chip">Alertas automáticos</span></div>
-                        <a href="apresentacao.html" class="btn btn-primary">Ver o projeto Ákron <svg class="arrow"><use href="#i-arrow" /></svg></a>
+                        <div class="badge-row">
+                            <span class="badge main">Projeto principal</span>
+                        </div>
+                        <h3 id="akron-titulo">Ákron</h3>
+                        <p class="proj-sub">Sistema Integrado de Monitoramento Ambiental de Estoques com IoT, Aplicativo Móvel e Plataforma Web</p>
+                        <p>O Ákron é uma solução tecnológica desenvolvida para monitorar as condições ambientais de estoques por meio da integração entre sensores IoT, plataforma web e aplicativo móvel. O sistema permite acompanhar variáveis como temperatura, umidade, ruído e qualidade do ar, visualizar históricos de leituras e receber alertas sobre condições que exigem atenção. Seu objetivo é facilitar o acompanhamento dos ambientes de armazenamento, centralizar informações e auxiliar na tomada de decisões.</p>
+
+                        <div class="proj-actions">
+                            <a href="apresentacao.html" class="btn btn-access"><span class="live" aria-hidden="true"></span> Ver apresentação <svg class="arrow"><use href="#i-arrow" /></svg></a>
+                        </div>
                     </div>
+                </article>
+
+                <!-- Propostas em planejamento -->
+                <div class="subhead reveal">
+                    <div>
+                        <h3>Propostas em planejamento</h3>
+                        <p>Ideias com pesquisa e análise próprias. Ainda não são sistemas implementados.</p>
+                    </div>
+                </div>
+
+                <div class="prop-grid">
+                    <article class="prop prop-amparo reveal">
+                        <div class="prop-art"><img src="img/projetos/protecao-animal.svg" alt="Ilustração com pata de animal, coração e marcador de localização" loading="lazy"></div>
+                        <div class="prop-body">
+                            <span class="badge plan" style="align-self:flex-start">Proposta em planejamento</span>
+                            <h3>Amparo <small>Plataforma Digital para Apoio à Adoção e Proteção de Animais</small></h3>
+                            <p>Proposta de plataforma que centraliza adoção, doações, denúncias de maus-tratos e localização de animais, aproximando ONGs, protetores independentes e pessoas interessadas em ajudar.</p>
+                            <div class="chips"><span class="chip">Adoção</span><span class="chip">Doações</span><span class="chip">Denúncias</span><span class="chip">Geolocalização</span></div>
+                            <p class="name-note">Nome provisório.</p>
+                            <a href="projetos/protecao-animal.html" class="prop-link">Ver apresentação <svg><use href="#i-arrow" /></svg></a>
+                        </div>
+                    </article>
+                    <article class="prop prop-elo reveal" style="--d:.1s">
+                        <div class="prop-art"><img src="img/projetos/doacao-alimentos.svg" alt="Ilustração com cesta de alimentos, coração e cartão de demandas" loading="lazy"></div>
+                        <div class="prop-body">
+                            <span class="badge plan" style="align-self:flex-start">Proposta em planejamento</span>
+                            <h3>Elo <small>Plataforma Online para Doação de Alimentos e Itens Essenciais</small></h3>
+                            <p>Proposta de plataforma que aproxima doadores, instituições sociais e famílias que precisam de apoio, organizando demandas e acompanhando as doações até a distribuição.</p>
+                            <div class="chips"><span class="chip">Demandas</span><span class="chip">Doadores</span><span class="chip">Pontos de coleta</span><span class="chip">Informações nutricionais</span></div>
+                            <p class="name-note">Nome provisório.</p>
+                            <a href="projetos/doacao-alimentos.html" class="prop-link">Ver apresentação <svg><use href="#i-arrow" /></svg></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -292,7 +368,7 @@
                 </div>
 
                 <div class="video-frame reveal" id="videoFrame">
-                    <video id="video" preload="metadata" controls playsinline poster="media/poster.jpg">
+                    <video id="videoPlayer" preload="metadata" controls playsinline poster="media/poster.jpg">
                         <source src="media/apresentacao-akron.mp4" type="video/mp4">
                         Seu navegador não suporta vídeo HTML5. <a href="media/apresentacao-akron.mp4">Baixe o vídeo</a>.
                     </video>
@@ -322,39 +398,73 @@
                 <div class="section-head center reveal">
                     <span class="eyebrow">Quem constrói</span>
                     <h2 class="section-title wide">Cinco pessoas, uma equipe</h2>
-                    <p class="section-lead">Cada integrante assume uma função de acordo com sua área de atuação, o que organiza o trabalho e garante que planejamento, programação, documentação e gestão avancem juntos.</p>
+                    <p class="section-lead">Cada integrante assume uma função de acordo com sua área de atuação. Passe o mouse (ou toque) sobre um cartão para ver o que cada pessoa faz no projeto.</p>
                 </div>
 
                 <figure class="group-photo reveal">
-                    <img src="img/equipe/grupo.jpg" alt="Foto da equipe Athenas: Carlos Eduardo, Bianca Moreira, Anna Hilda, Beatriz Gonçalves e Marcelo Duzzi" loading="lazy">
-                    <figcaption>Da esquerda para a direita: Carlos Eduardo, Bianca Moreira, Anna Hilda, Beatriz Gonçalves e Marcelo Duzzi.</figcaption>
+                    <img src="img/equipe/grupo.jpg" alt="Foto da equipe Athenas" loading="lazy">
+                    <figcaption>Equipe Athenas · Desenvolvimento do projeto Ákron.</figcaption>
                 </figure>
 
-                <div class="team">
-                    <article class="member reveal">
-                        <div class="ph"><img src="img/equipe/annah.jpg" alt="Anna Hilda Castelani Frezarini" loading="lazy"></div>
-                        <div class="info"><h3>Anna Hilda</h3><p class="role"><b>Product Owner</b> · Desenvolvedora Full Stack</p>
-                            <a href="https://github.com/Nananilda" target="_blank" rel="noopener"><svg><use href="#i-gh" /></svg> GitHub</a></div>
+                <div class="team flipteam"><article class="fcard featured-owner reveal" tabindex="0" role="group" aria-label="Anna Hilda, Product Owner. Cartão giratório: passe o mouse, toque ou pressione Enter para ver a função.">
+                        <div class="fcard-inner">
+                            <div class="fcard-face fcard-front">
+                                <div class="ph"><span class="team-ribbon">Product Owner</span><img src="img/equipe/annah.jpg" alt="Anna Hilda Castelani Frezarini" loading="lazy"></div>
+                                <div class="info"><h3>Anna Hilda</h3><p class="role"><b>Product Owner</b><br>Desenvolvedora Full Stack</p><span class="hint">Ver função</span></div>
+                            </div>
+                            <div class="fcard-face fcard-back">
+                                <div><span class="back-role">Product Owner</span><h3>Anna Hilda</h3><p>Lidera a equipe e acompanha todas as etapas do projeto, participando do planejamento, desenvolvimento e integração das funcionalidades.</p></div>
+                                <a href="https://github.com/Nananilda" target="_blank" rel="noopener" aria-label="GitHub de Anna Hilda (abre em nova aba)"><svg><use href="#i-gh" /></svg> GitHub</a>
+                            </div>
+                        </div>
                     </article>
-                    <article class="member reveal" style="--d:.06s">
-                        <div class="ph"><img src="img/equipe/bianca.jpg" alt="Bianca Moreira de Oliveira" loading="lazy"></div>
-                        <div class="info"><h3>Bianca Moreira</h3><p class="role"><b>Scrum Master</b> · Desenvolvedora Back-end</p>
-                            <a href="https://github.com/bywoliveira" target="_blank" rel="noopener"><svg><use href="#i-gh" /></svg> GitHub</a></div>
+<article class="fcard reveal" style="--d:.24s" tabindex="0" role="group" aria-label="Beatriz Gonçalves, Documentação. Cartão giratório: passe o mouse, toque ou pressione Enter para ver a função.">
+                        <div class="fcard-inner">
+                            <div class="fcard-face fcard-front">
+                                <div class="ph"><img src="img/equipe/beatriz.jpg" alt="Beatriz Gonçalves Lense Campos" loading="lazy"></div>
+                                <div class="info"><h3>Beatriz Gonçalves</h3><p class="role"><b>Documentação</b></p><span class="hint">Ver função</span></div>
+                            </div>
+                            <div class="fcard-face fcard-back">
+                                <div><span class="back-role">Documentação</span><h3>Beatriz Gonçalves</h3><p>Organiza a documentação técnica e os registros do projeto, descrevendo requisitos, processos e decisões de desenvolvimento.</p></div>
+                                <a href="https://github.com/biagoncalvezx" target="_blank" rel="noopener" aria-label="GitHub de Beatriz Gonçalves (abre em nova aba)"><svg><use href="#i-gh" /></svg> GitHub</a>
+                            </div>
+                        </div>
                     </article>
-                    <article class="member reveal" style="--d:.12s">
-                        <div class="ph"><img src="img/equipe/carlos.jpg" alt="Carlos Eduardo Martins da Costa" loading="lazy"></div>
-                        <div class="info"><h3>Carlos Eduardo</h3><p class="role"><b>Desenvolvedor Front-end</b></p>
-                            <a href="https://github.com/Carlos-Eduardo-Costa" target="_blank" rel="noopener"><svg><use href="#i-gh" /></svg> GitHub</a></div>
+<article class="fcard reveal" style="--d:.06s" tabindex="0" role="group" aria-label="Bianca Moreira, Scrum Master. Cartão giratório: passe o mouse, toque ou pressione Enter para ver a função.">
+                        <div class="fcard-inner">
+                            <div class="fcard-face fcard-front">
+                                <div class="ph"><span class="team-ribbon">Scrum Master</span><img src="img/equipe/bianca.jpg" alt="Bianca Moreira de Oliveira" loading="lazy"></div>
+                                <div class="info"><h3>Bianca Moreira</h3><p class="role"><b>Scrum Master</b><br>Desenvolvedora Back-end</p><span class="hint">Ver função</span></div>
+                            </div>
+                            <div class="fcard-face fcard-back">
+                                <div><span class="back-role">Scrum Master</span><h3>Bianca Moreira</h3><p>Organiza o fluxo de trabalho, acompanha as atividades e trabalha na lógica do sistema, nas APIs e na integração com o banco de dados.</p></div>
+                                <a href="https://github.com/bywoliveira" target="_blank" rel="noopener" aria-label="GitHub de Bianca Moreira (abre em nova aba)"><svg><use href="#i-gh" /></svg> GitHub</a>
+                            </div>
+                        </div>
                     </article>
-                    <article class="member reveal" style="--d:.18s">
-                        <div class="ph"><img src="img/equipe/marcelo.jpg" alt="Marcelo Duzzi Santonio" loading="lazy"></div>
-                        <div class="info"><h3>Marcelo Duzzi</h3><p class="role"><b>Banco de Dados</b></p>
-                            <a href="https://github.com/Mar3l00" target="_blank" rel="noopener"><svg><use href="#i-gh" /></svg> GitHub</a></div>
+<article class="fcard reveal" style="--d:.12s" tabindex="0" role="group" aria-label="Carlos Eduardo, Desenvolvedor Front-end. Cartão giratório: passe o mouse, toque ou pressione Enter para ver a função.">
+                        <div class="fcard-inner">
+                            <div class="fcard-face fcard-front">
+                                <div class="ph"><img src="img/equipe/carlos.jpg" alt="Carlos Eduardo Martins da Costa" loading="lazy"></div>
+                                <div class="info"><h3>Carlos Eduardo</h3><p class="role"><b>Desenvolvedor Front-end</b></p><span class="hint">Ver função</span></div>
+                            </div>
+                            <div class="fcard-face fcard-back">
+                                <div><span class="back-role">Desenvolvedor Front-end</span><h3>Carlos Eduardo</h3><p>Desenvolve as interfaces do sistema, trabalhando na estrutura visual, na usabilidade e na interação entre os usuários e as funcionalidades.</p></div>
+                                <a href="https://github.com/Carlos-Eduardo-Costa" target="_blank" rel="noopener" aria-label="GitHub de Carlos Eduardo (abre em nova aba)"><svg><use href="#i-gh" /></svg> GitHub</a>
+                            </div>
+                        </div>
                     </article>
-                    <article class="member reveal" style="--d:.24s">
-                        <div class="ph"><img src="img/equipe/beatriz.jpg" alt="Beatriz Gonçalves Lense Campos" loading="lazy"></div>
-                        <div class="info"><h3>Beatriz Gonçalves</h3><p class="role"><b>Documentação</b></p>
-                            <a href="https://github.com/biagoncalvezx" target="_blank" rel="noopener"><svg><use href="#i-gh" /></svg> GitHub</a></div>
+<article class="fcard reveal" style="--d:.18s" tabindex="0" role="group" aria-label="Marcelo Duzzi, Banco de Dados. Cartão giratório: passe o mouse, toque ou pressione Enter para ver a função.">
+                        <div class="fcard-inner">
+                            <div class="fcard-face fcard-front">
+                                <div class="ph"><img src="img/equipe/marcelo.jpg" alt="Marcelo Duzzi Santonio" loading="lazy"></div>
+                                <div class="info"><h3>Marcelo Duzzi</h3><p class="role"><b>Banco de Dados</b></p><span class="hint">Ver função</span></div>
+                            </div>
+                            <div class="fcard-face fcard-back">
+                                <div><span class="back-role">Banco de Dados</span><h3>Marcelo Duzzi</h3><p>Estrutura e organiza o banco de dados, definindo tabelas, relacionamentos e mecanismos de gerenciamento das informações.</p></div>
+                                <a href="https://github.com/Mar3l00" target="_blank" rel="noopener" aria-label="GitHub de Marcelo Duzzi (abre em nova aba)"><svg><use href="#i-gh" /></svg> GitHub</a>
+                            </div>
+                        </div>
                     </article>
                 </div>
 
@@ -368,9 +478,9 @@
                 <div class="reveal">
                     <span class="eyebrow">Vamos conversar</span>
                     <h2 class="section-title">Tem um problema para resolver?</h2>
-                    <p class="section-lead">Conte para a equipe da Athenas. Ao enviar, o seu aplicativo de e-mail abre com o texto já preenchido.</p>
+                    <p class="section-lead">Conte para a equipe da Athenas. Ao enviar, o seu aplicativo de e-mail abre com a mensagem já preenchida e o assunto “Contato pelo site da Athenas”.</p>
                     <div class="contact-lines">
-                        <div class="cline"><span class="icon-chip"><svg><use href="#i-mail" /></svg></span> contato@athenas.com</div>
+                        <div class="cline"><span class="icon-chip"><svg><use href="#i-mail" /></svg></span> <a href="mailto:contatoathenasdev@athenas.dev.br?subject=Contato%20pelo%20site%20da%20Athenas" data-mail-link style="text-decoration:underline;text-underline-offset:3px">contatoathenasdev@athenas.dev.br</a></div>
                         <div class="cline"><span class="icon-chip"><svg><use href="#i-pin" /></svg></span> Mococa · SP</div>
                         <div class="cline"><span class="icon-chip"><svg><use href="#i-peak" /></svg></span> <a href="apresentacao.html" style="text-decoration:underline;text-underline-offset:3px">Conhecer o projeto Ákron</a></div>
                     </div>
@@ -391,14 +501,15 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <span class="logo-mask logo-ath-full" role="img" aria-label="Logo da Athenas"></span>
-                <p>Athenas Desenvolvimento de Sistemas. Soluções digitais personalizadas, com sistemas, websites e integrações entre plataformas.</p>
+                <p>Athenas Desenvolvimento de Sistemas. Soluções tecnológicas que unem criatividade, planejamento e conhecimento técnico.</p>
             </div>
             <div>
                 <h4>Empresa</h4>
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#identidade">Identidade</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#equipe">Equipe</a></li>
                     <li><a href="apresentacao.html">Projeto Ákron</a></li>
                 </ul>
@@ -406,7 +517,7 @@
             <div>
                 <h4>Contato</h4>
                 <ul>
-                    <li>contato@athenas.com</li>
+                    <li><a href="mailto:contatoathenasdev@athenas.dev.br?subject=Contato%20pelo%20site%20da%20Athenas" data-mail-link>contatoathenasdev@athenas.dev.br</a></li>
                     <li>Mococa · SP</li>
                     <li>SENAI · Técnico em Desenvolvimento de Sistemas</li>
                 </ul>
@@ -418,7 +529,10 @@
         </div>
     </footer>
 
+    <script src="js/config.js"></script>
+    <script src="js/loading.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/projetos.js"></script>
 </body>
 
 </html>
