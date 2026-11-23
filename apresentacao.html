@@ -119,7 +119,7 @@
                 <div>
                     <span class="pill reveal"><span class="dot"></span> TCC da Athenas · SENAI Mococa-SP · 2026</span>
                     <h1 class="reveal" style="--d:.08s">A <em>visão do alto</em> do seu ambiente de produção.</h1>
-                    <p class="hero-lead reveal" style="--d:.16s">O <strong>Ákron</strong> coleta, armazena e exibe em tempo real temperatura, umidade, ruído, qualidade do ar, pressão e radiação UV, e avisa o gestor quando um limite é ultrapassado. <em>Inteligência e Monitoramento para a Indústria.</em></p>
+                    <p class="hero-lead reveal" style="--d:.16s">O <strong>Ákron</strong> coleta, armazena e exibe, organizados por estoque, temperatura, umidade, qualidade do ar e radiação UV (ruído e pressão também são aceitos pelo sistema), e avisa o gestor quando um limite é ultrapassado. <em>Inteligência e Monitoramento para a Indústria.</em></p>
                     <div class="hero-actions reveal" style="--d:.24s">
                         <a href="index.html#video" class="btn btn-primary">
                             <svg style="width:16px;height:16px"><use href="#i-play" /></svg> Assistir ao vídeo
@@ -127,9 +127,9 @@
                         <a href="akron/" class="btn btn-access">Ir para o sistema <svg class="arrow"><use href="#i-arrow" /></svg></a>
                     </div>
                     <div class="hero-facts reveal" style="--d:.32s">
-                        <div><strong><span data-count="6">0</span></strong><span>variáveis monitoradas</span></div>
+                        <div><strong><span data-count="6">0</span></strong><span>tipos de sensor tratados</span></div>
                         <div><strong><span data-count="2">0</span></strong><span>plataformas: web e mobile</span></div>
-                        <div><strong><span data-count="8">0</span></strong><span>objetivos específicos</span></div>
+                        <div><strong><span data-count="9">0</span></strong><span>objetivos específicos</span></div>
                     </div>
                 </div>
 
@@ -211,8 +211,8 @@
         <!-- ===================== FAIXA ===================== -->
         <div class="strip" aria-label="Tecnologias do projeto">
             <div class="strip-track">
-                <span>Internet das Coisas</span><span>Arduino</span><span>HTTP + JSON</span><span>API RESTful</span><span>PHP + PDO</span><span>MySQL</span><span>HTML · CSS · JavaScript</span><span>Aplicativo móvel</span><span>Indústria 4.0</span><span>Scrum</span>
-                <span>Internet das Coisas</span><span>Arduino</span><span>HTTP + JSON</span><span>API RESTful</span><span>PHP + PDO</span><span>MySQL</span><span>HTML · CSS · JavaScript</span><span>Aplicativo móvel</span><span>Indústria 4.0</span><span>Scrum</span>
+                <span>Internet das Coisas</span><span>ESP32</span><span>HTTP + JSON</span><span>API RESTful</span><span>PHP + PDO</span><span>MySQL</span><span>HTML · CSS · JavaScript</span><span>Aplicativo móvel (Flutter)</span><span>Indústria 4.0</span><span>Scrum</span>
+                <span>Internet das Coisas</span><span>ESP32</span><span>HTTP + JSON</span><span>API RESTful</span><span>PHP + PDO</span><span>MySQL</span><span>HTML · CSS · JavaScript</span><span>Aplicativo móvel (Flutter)</span><span>Indústria 4.0</span><span>Scrum</span>
             </div>
         </div>
 
@@ -251,7 +251,7 @@
                     <article class="card reveal" style="--d:.16s">
                         <div class="icon-chip"><svg><use href="#i-book" /></svg></div>
                         <h3>Para a formação</h3>
-                        <p>O projeto integra áreas que o curso ensina separadamente: desenvolvimento de software, banco de dados, Internet das Coisas e desenvolvimento móvel. Permite aplicar o aprendizado na prática, da modelagem à implantação simulada.</p>
+                        <p>O projeto integra áreas que o curso ensina separadamente: desenvolvimento de software, banco de dados, Internet das Coisas e desenvolvimento móvel. Permite aplicar o aprendizado na prática, da modelagem aos testes em ambiente simulado.</p>
                     </article>
                 </div>
 
@@ -283,7 +283,7 @@
                     </div>
                     <div class="flow-step reveal" style="--d:.08s">
                         <div class="flow-ic"><svg><use href="#i-cpu" /></svg></div>
-                        <div><small>Etapa 2</small><h3>Arduino</h3><p>Lê os sensores e monta a mensagem a enviar.</p></div>
+                        <div><small>Etapa 2</small><h3>ESP32</h3><p>Lê os sensores e monta a mensagem a enviar, com Wi-Fi integrado.</p></div>
                     </div>
                     <div class="flow-step reveal" style="--d:.16s">
                         <div class="flow-ic"><svg><use href="#i-net" /></svg></div>
@@ -295,18 +295,19 @@
                     </div>
                     <div class="flow-step reveal" style="--d:.32s">
                         <div class="flow-ic"><svg><use href="#i-monitor" /></svg></div>
-                        <div><small>Etapa 5</small><h3>Web e aplicativo</h3><p>Painéis, gráficos, relatórios e notificações.</p></div>
+                        <div><small>Etapa 5</small><h3>Web e aplicativo</h3><p>Painéis, gráficos, alertas e relatórios em CSV e PDF.</p></div>
                     </div>
                 </div>
 
                 <div class="sensors" aria-label="Variáveis monitoradas">
                     <div class="sensor reveal"><svg><use href="#i-temp" /></svg><strong>Temperatura</strong><span>°C</span></div>
                     <div class="sensor reveal" style="--d:.05s"><svg><use href="#i-drop" /></svg><strong>Umidade</strong><span>%</span></div>
-                    <div class="sensor reveal" style="--d:.1s"><svg><use href="#i-noise" /></svg><strong>Ruído</strong><span>dB</span></div>
+                    <div class="sensor reveal" style="--d:.1s"><svg><use href="#i-noise" /></svg><strong>Ruído</strong><span>dB · via API</span></div>
                     <div class="sensor reveal" style="--d:.15s"><svg><use href="#i-wind" /></svg><strong>Qualidade do ar</strong><span>AQI</span></div>
-                    <div class="sensor reveal" style="--d:.2s"><svg><use href="#i-gauge" /></svg><strong>Pressão</strong><span>hPa</span></div>
+                    <div class="sensor reveal" style="--d:.2s"><svg><use href="#i-gauge" /></svg><strong>Pressão</strong><span>hPa · via API</span></div>
                     <div class="sensor reveal" style="--d:.25s"><svg><use href="#i-uv" /></svg><strong>Radiação UV</strong><span>índice</span></div>
                 </div>
+                <p class="cmp-note reveal" style="margin-top:20px">Protótipo físico: ESP32 DevKit V1 com os sensores DHT11 (temperatura e umidade), GUVA-S12SD (radiação UV) e MQ135 (qualidade do ar), montados em protoboards com cabos jumper, sem solda. Ruído e pressão são aceitos pelo sistema, mas não têm sensor físico no protótipo: foram exercitados com dados enviados pela API. Os valores de UV e de qualidade do ar são brutos e exigem conversão e calibração. Nesta versão, o código do ESP32 exibe as leituras em uma página local; o envio automático à API depende de uma integração adicional.</p>
             </div>
         </section>
 
@@ -316,14 +317,14 @@
                 <div class="section-head reveal">
                     <span class="eyebrow">Recursos</span>
                     <h2 class="section-title wide">O problema encontra o gestor, e não o contrário</h2>
-                    <p class="section-lead">As funcionalidades nascem dos requisitos do projeto: monitorar, alertar, analisar e acompanhar de qualquer lugar.</p>
+                    <p class="section-lead">As funcionalidades nascem dos requisitos do projeto: monitorar cada estoque, alertar, analisar e acompanhar de qualquer lugar.</p>
                 </div>
 
                 <div class="bento">
                     <article class="card b-1 reveal">
                         <div class="icon-chip"><svg><use href="#i-monitor" /></svg></div>
-                        <h3>Monitoramento em tempo real</h3>
-                        <p>Painel com o valor atual de cada grandeza, o estado (normal ou em alerta) e os alertas mais recentes. Gráficos em tempo real permitem acompanhar variações por sensor e período.</p>
+                        <h3>Monitoramento com atualização automática</h3>
+                        <p>Painel de módulos com indicadores e, no monitoramento, o valor atual e o gráfico de cada variável, atualizados sozinhos a cada 15 segundos. Períodos sem comunicação aparecem como lacuna, e a tela avisa se a conexão falhar.</p>
                         <div class="mini-chart" aria-hidden="true">
                             <svg viewBox="0 0 400 120" preserveAspectRatio="none">
                                 <defs><linearGradient id="gMini" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity=".3"/><stop offset="1" stop-color="var(--brand)" stop-opacity="0"/></linearGradient></defs>
@@ -337,17 +338,17 @@
                     <article class="card b-2 reveal" style="--d:.06s">
                         <div class="icon-chip gold"><svg><use href="#i-bell" /></svg></div>
                         <h3>Alertas automáticos e manuais</h3>
-                        <p>Quando uma leitura ultrapassa o limite, o Ákron cria o alerta sozinho. O administrador também pode registrar alertas manuais e marcá-los como resolvidos.</p>
+                        <p>Quando uma leitura ultrapassa o limite, o Ákron cria o alerta sozinho, sem duplicá-lo enquanto a irregularidade continuar. O administrador reconhece, resolve com observações ou registra alertas manuais; se a leitura voltar ao normal, o alerta é marcado como normalizado.</p>
                         <div class="mini-alerts">
-                            <div class="mini-alert"><span class="sev c">Crítico</span><span>Ruído acima de 85 dB na prensa</span></div>
-                            <div class="mini-alert"><span class="sev w">Atenção</span><span>Temperatura acima do limite</span></div>
+                            <div class="mini-alert"><span class="sev c">Crítico</span><span>Temperatura acima de 35 °C no Estoque A</span></div>
+                            <div class="mini-alert"><span class="sev w">Atenção</span><span>Ruído acima de 85 dB na prensa</span></div>
                             <div class="mini-alert"><span class="sev i">Info</span><span>Leitura de qualidade do ar registrada</span></div>
                         </div>
                     </article>
                     <article class="card b-3 reveal">
                         <div class="icon-chip"><svg><use href="#i-sliders" /></svg></div>
                         <h3>Limites configuráveis</h3>
-                        <p>O administrador define mínimo e máximo por sensor. O sistema impede limites incoerentes.</p>
+                        <p>Cada sensor tem quatro limites (mínimo e máximo para atenção e para crítico) e um prazo de comunicação, definidos pelo administrador. Cada leitura guarda os limites vigentes, então mudar um limite não reescreve o histórico.</p>
                         <div class="limit-demo" aria-hidden="true">
                             <div class="range"><i></i><i></i></div>
                             <div class="range-l"><span>mín.</span><span>faixa aceitável</span><span>máx.</span></div>
@@ -356,7 +357,7 @@
                     <article class="card b-4 reveal" style="--d:.06s">
                         <div class="icon-chip"><svg><use href="#i-report" /></svg></div>
                         <h3>Relatórios históricos</h3>
-                        <p>Escolha período e sensores para gerar tabela com leituras, média, mínimo e máximo, e descubra padrões, como uma temperatura que sobe sempre no mesmo horário.</p>
+                        <p>Filtre por estoque, sensor, tipo, período e faixa de valores e veja média, mínimo, máximo e tempo estimado fora dos limites. O resultado completo é exportado em CSV ou PDF.</p>
                         <div class="mini-table" aria-hidden="true">
                             <div><span>Sensor</span><span>Média</span><span>Mín.</span><span>Máx.</span></div>
                             <div><span>Temperatura</span><span>22,9</span><span>16,4</span><span>36,4</span></div>
@@ -366,7 +367,7 @@
                     <article class="card b-5 reveal" style="--d:.12s">
                         <div class="icon-chip"><svg><use href="#i-phone" /></svg></div>
                         <h3>Aplicativo móvel</h3>
-                        <p>Acompanhe de onde estiver, com tema claro e escuro e perfis de administrador e funcionário.</p>
+                        <p>Acompanhe estoques, sensores, alertas e relatórios de onde estiver, em tema claro e escuro. O aplicativo consulta a API; não há notificação push nesta versão.</p>
                         <div class="phones" aria-hidden="true">
                             <div class="phone"><i></i><i class="b"></i><i class="b"></i></div>
                             <div class="phone"><i></i><i class="b"></i><i></i><i class="b"></i></div>
@@ -376,15 +377,15 @@
                     <article class="card b-6 reveal">
                         <div class="icon-chip"><svg><use href="#i-lock" /></svg></div>
                         <h3>Acesso controlado por perfil</h3>
-                        <p>Login com e-mail e senha. As senhas são armazenadas como hash, e o perfil define o que cada pessoa pode ver e fazer: o administrador gerencia usuários, dispositivos, sensores e limites.</p>
+                        <p>Login com usuário e senha, com bloqueio temporário após cinco falhas em 15 minutos. As senhas são armazenadas como hash (bcrypt), e o acesso é definido por perfil e por estoque: o administrador gerencia estoques, sensores, limites e usuários; o usuário consulta apenas os estoques autorizados.</p>
                         <div class="profile-row">
-                            <span class="chip">Administrador</span><span class="chip">Funcionário</span><span class="chip">Consultas preparadas (PDO)</span>
+                            <span class="chip">Administrador</span><span class="chip">Usuário</span><span class="chip">Acesso por estoque</span><span class="chip">Consultas preparadas (PDO)</span>
                         </div>
                     </article>
                     <article class="card b-7 reveal" style="--d:.06s">
                         <div class="icon-chip gold"><svg><use href="#i-link" /></svg></div>
                         <h3>API RESTful em JSON</h3>
-                        <p>As leituras ficam disponíveis por uma API, a mesma usada pelos dispositivos e pelo aplicativo, abrindo caminho para integração com sistemas existentes, sem substituí-los.</p>
+                        <p>A API JSON é a mesma usada pelos dispositivos (autenticados por chave do sensor) e pelo aplicativo (por token), abrindo caminho para futuras integrações com sistemas existentes, sem substituí-los.</p>
                         <pre class="code-block"><span class="k">POST</span> /api/leituras
 { <span class="n">"sensor_id"</span>: <span class="s">3</span>, <span class="n">"valor"</span>: <span class="s">27.4</span> }
 <span class="k">→ 201</span> { <span class="n">"alerta"</span>: <span class="s">false</span> }</pre>
@@ -439,6 +440,7 @@
                     <a href="#arquitetura">Arquitetura</a>
                     <a href="#comunicacao">Comunicação</a>
                     <a href="#telas">Telas</a>
+                    <a href="#testes">Testes e validação</a>
                     <a href="#conclusao">Considerações finais</a>
                 </aside>
 
@@ -447,9 +449,9 @@
                     <article class="doc-section" id="resumo">
                         <span class="eyebrow">Resumo</span>
                         <h2>O que é o Ákron</h2>
-                        <p>Este trabalho apresenta o desenvolvimento do Ákron, um sistema de monitoramento do ambiente de produção integrado à gestão industrial, criado pela Athenas Desenvolvimento de Sistemas. O projeto parte do problema de que muitas indústrias, mesmo possuindo sistemas administrativos consolidados, ainda têm dificuldade em acompanhar de forma contínua e em tempo real as condições físicas do ambiente produtivo (temperatura, umidade, ruído, qualidade do ar, pressão e radiação ultravioleta), o que pode afetar a eficiência operacional e a segurança dos trabalhadores.</p>
-                        <p>O objetivo foi desenvolver uma solução integrada para coleta, armazenamento, análise e visualização desses dados, com emissão de alertas quando os parâmetros ultrapassam limites definidos. A metodologia seguiu princípios da Engenharia de Software e da gestão ágil (Scrum). A solução é composta por sensores ligados a um microcontrolador, que enviam as medições por HTTP, em formato JSON, a uma API RESTful desenvolvida em PHP; os dados são gravados em banco MySQL, acessado por PHP Data Objects (PDO) com consultas preparadas, e apresentados em uma plataforma web (HTML, CSS e JavaScript) e em um aplicativo móvel.</p>
-                        <p>A arquitetura modular adotada permite ampliar o sistema com novos sensores, atuadores e integrações.</p>
+                        <p>Este trabalho apresenta o desenvolvimento do Ákron, um sistema de monitoramento ambiental de estoques e ambientes de produção integrado à gestão industrial, criado pela Athenas Desenvolvimento de Sistemas. O projeto parte da dificuldade que muitas empresas enfrentam para acompanhar continuamente as condições físicas dos locais onde produzem e armazenam (temperatura, umidade, qualidade do ar, ruído, pressão e radiação ultravioleta), fatores que podem afetar a conservação dos produtos, a eficiência operacional e a segurança dos trabalhadores.</p>
+                        <p>O objetivo foi desenvolver uma solução integrada para coleta, armazenamento, análise e visualização desses dados, com alertas quando os valores ultrapassam limites definidos para cada sensor. A metodologia seguiu princípios da Engenharia de Software e da gestão ágil (Scrum). A solução é composta por um microcontrolador ESP32 ligado a sensores DHT11 (temperatura e umidade), GUVA-S12SD (radiação UV) e MQ135 (qualidade do ar), que envia as medições por HTTP, em formato JSON, a uma API desenvolvida em PHP. Os dados são gravados em MySQL (acesso por PDO, com consultas preparadas), organizados por estoque e apresentados em uma plataforma web (HTML, CSS e JavaScript) e em um aplicativo móvel. O sistema classifica cada leitura em normal, atenção ou crítico, gera alertas sem duplicá-los, controla o acesso por perfil e por estoque e exporta relatórios em CSV e PDF.</p>
+                        <p>As suítes de testes automatizados, executadas em ambiente de teste, foram concluídas sem falhas, o que comprova o funcionamento das funções implementadas com dados de teste e de demonstração. A validação em uma indústria real, com sensores calibrados, permanece como etapa futura.</p>
                         <div class="profile-row" style="padding-top:8px">
                             <span class="chip">Internet das Coisas</span><span class="chip">Indústria 4.0</span><span class="chip">Monitoramento ambiental</span><span class="chip">Gestão industrial</span><span class="chip">Sensores</span>
                         </div>
@@ -459,33 +461,33 @@
                     <article class="doc-section" id="objetivos">
                         <span class="eyebrow">Capítulo 1</span>
                         <h2>Objetivos</h2>
-                        <div class="callout gold"><b>Objetivo geral.</b> Desenvolver um sistema integrado de monitoramento do ambiente de produção aplicado à gestão industrial, com foco na coleta, análise e visualização de dados ambientais em tempo real, visando à melhoria da eficiência operacional, da segurança dos trabalhadores e da tomada de decisão em ambientes industriais.</div>
+                        <div class="callout gold"><b>Objetivo geral.</b> Desenvolver um sistema integrado de monitoramento ambiental de estoques e ambientes de produção aplicado à gestão industrial, com foco no recebimento, na análise e na visualização de dados ambientais em tempo quase real, visando apoiar a conservação dos produtos, a eficiência operacional, a segurança dos trabalhadores e a tomada de decisão.</div>
                         <h3 class="sub">Objetivos específicos</h3>
                         <div class="obj-grid">
-                            <div class="obj"><b>OE1</b><p>Coletar dados ambientais por meio de sensores IoT conectados a um microcontrolador, medindo temperatura, umidade, ruído, qualidade do ar, pressão e radiação ultravioleta.</p></div>
+                            <div class="obj"><b>OE1</b><p>Coletar dados ambientais por meio de sensores IoT conectados a um microcontrolador (ESP32), medindo temperatura, umidade, qualidade do ar e radiação ultravioleta, com suporte no sistema também a ruído e pressão.</p></div>
                             <div class="obj"><b>OE2</b><p>Transmitir as medições a um servidor por meio da rede e armazená-las em banco de dados, mantendo o histórico.</p></div>
-                            <div class="obj"><b>OE3</b><p>Apresentar os dados em uma plataforma web, por meio de painéis e gráficos que facilitem a interpretação.</p></div>
-                            <div class="obj"><b>OE4</b><p>Permitir a configuração de limites de referência e emitir alertas automáticos quando houver valores fora do padrão.</p></div>
-                            <div class="obj"><b>OE5</b><p>Gerar relatórios históricos que apoiem a análise e a tomada de decisão.</p></div>
-                            <div class="obj"><b>OE6</b><p>Disponibilizar o acompanhamento remoto e o recebimento de notificações em aplicativo móvel.</p></div>
-                            <div class="obj"><b>OE7</b><p>Oferecer integração com sistemas existentes por meio de uma API, sem substituí-los.</p></div>
-                            <div class="obj"><b>OE8</b><p>Validar a solução em ambiente simulado, representando uma linha de produção, por meio de testes documentados.</p></div>
+                            <div class="obj"><b>OE3</b><p>Organizar o monitoramento por estoques, vinculando os sensores a cada estoque e restringindo o acesso dos usuários aos estoques autorizados.</p></div>
+                            <div class="obj"><b>OE4</b><p>Apresentar os dados em uma plataforma web, por meio de painel, monitoramento e gráficos que facilitem a interpretação.</p></div>
+                            <div class="obj"><b>OE5</b><p>Emitir alertas automáticos a partir de limites configuráveis para cada sensor e acompanhar cada alerta até sua resolução.</p></div>
+                            <div class="obj"><b>OE6</b><p>Gerar relatórios históricos, com filtros e exportação em CSV e PDF, que apoiem a análise e a tomada de decisão.</p></div>
+                            <div class="obj"><b>OE7</b><p>Disponibilizar o acompanhamento remoto dos dados e dos alertas em aplicativo móvel.</p></div>
+                            <div class="obj"><b>OE8</b><p>Disponibilizar os dados monitorados por meio de uma API, permitindo a comunicação entre os componentes do sistema e possibilitando futuras integrações com sistemas existentes.</p></div>
+                            <div class="obj"><b>OE9</b><p>Validar a solução em ambiente simulado, por meio de testes documentados.</p></div>
                         </div>
                     </article>
-
                     <!-- METODOLOGIA -->
                     <article class="doc-section" id="metodologia">
                         <span class="eyebrow">Capítulo 1</span>
                         <h2>Metodologia</h2>
-                        <p>O desenvolvimento foi dividido em etapas, seguindo os princípios da Engenharia de Software, da análise do problema até a implementação e a avaliação da solução. A equipe adotou práticas de metodologia ágil, com os papéis de Product Owner e Scrum Master.</p>
+                        <p>O desenvolvimento foi dividido em etapas, seguindo os princípios da Engenharia de Software, da análise do problema até a implementação e a avaliação da solução. A equipe adota o Scrum desde aproximadamente maio, com dez Sprints principais, Sprints intermediárias (X.5) para testes e correções e um quadro Kanban físico, além dos papéis de Product Owner e Scrum Master.</p>
                         <div class="timeline">
-                            <div class="tl"><span class="num">1</span><div><h3>Pesquisa e levantamento de necessidades</h3><p>Compreender as dificuldades do monitoramento do ambiente produtivo e coletar requisitos funcionais e não funcionais.</p></div></div>
-                            <div class="tl"><span class="num">2</span><div><h3>Análise e especificação de requisitos</h3><p>Definição das funcionalidades, restrições e objetivos, resultando nas tabelas de requisitos funcionais e não funcionais.</p></div></div>
+                            <div class="tl"><span class="num">1</span><div><h3>Pesquisa e levantamento de necessidades</h3><p>Questionário com representantes de empresas de diferentes setores e portes (nove respostas) para entender as dificuldades do monitoramento dos ambientes de produção e de estoque.</p></div></div>
+                            <div class="tl"><span class="num">2</span><div><h3>Análise e especificação de requisitos</h3><p>Definição dos requisitos funcionais (RF01 a RF18) e não funcionais, com prioridades e critérios de aceitação.</p></div></div>
                             <div class="tl"><span class="num">3</span><div><h3>Modelagem</h3><p>Diagrama de casos de uso, modelo de dados (MER e DER) e arquitetura, incluindo a integração entre hardware e software.</p></div></div>
-                            <div class="tl"><span class="num">4</span><div><h3>Desenvolvimento</h3><p>Arduino para leitura dos sensores; PHP com PDO no back-end; MySQL para armazenamento; HTML, CSS e JavaScript na interface web e aplicativo móvel. Comunicação por HTTP com JSON, organizada como API RESTful.</p></div></div>
-                            <div class="tl"><span class="num">5</span><div><h3>Testes</h3><p>Validação da coleta de dados, do processamento, da geração de alertas e da exibição na web e no aplicativo. Erros encontrados foram registrados e corrigidos.</p></div></div>
-                            <div class="tl"><span class="num">6</span><div><h3>Análise de viabilidade técnica e operacional</h3><p>Adequação das tecnologias, integração entre dispositivos, escalabilidade e aplicabilidade em ambientes industriais reais.</p></div></div>
-                            <div class="tl"><span class="num">7</span><div><h3>Implantação simulada</h3><p>Operação em ambiente controlado que representa uma linha de produção, para observar o comportamento do sistema em condições próximas da realidade.</p></div></div>
+                            <div class="tl"><span class="num">4</span><div><h3>Desenvolvimento</h3><p>ESP32 (DevKit V1) para leitura dos sensores; PHP com PDO no back-end; MySQL para armazenamento; HTML, CSS e JavaScript na interface web; aplicativo móvel em Flutter. Comunicação por HTTP com JSON, por meio de uma API.</p></div></div>
+                            <div class="tl"><span class="num">5</span><div><h3>Testes</h3><p>Testes automatizados em ambiente controlado: API, ciclo dos alertas, controle de acesso, exportação de relatórios, interface web e atualização do banco de dados.</p></div></div>
+                            <div class="tl"><span class="num">6</span><div><h3>Análise de viabilidade técnica</h3><p>Análise das tecnologias, da comunicação entre os componentes, da ampliação para novos sensores e setores e das condições para uso em ambientes industriais reais.</p></div></div>
+                            <div class="tl"><span class="num">7</span><div><h3>Avaliação em ambiente simulado</h3><p>Avaliação em ambiente controlado para observar o comportamento dos componentes nas condições de teste. Não corresponde a uma implantação definitiva em uma indústria real.</p></div></div>
                             <div class="tl"><span class="num">8</span><div><h3>Manutenção e evolução</h3><p>Sistema modular, de modo que correções, melhorias e adaptações possam ser feitas sem refazer toda a solução.</p></div></div>
                         </div>
                     </article>
@@ -503,60 +505,100 @@
 
                         <div class="tabpanel" role="tabpanel" id="panel-rf" aria-labelledby="tab-rf">
                             <div class="req-table">
-                                <div class="req"><code>RF01</code><span>Coletar dados ambientais por meio de sensores IoT (temperatura, ruído, umidade, qualidade do ar, pressão e UV).</span></div>
-                                <div class="req"><code>RF02</code><span>Receber dados dos dispositivos (por exemplo, Arduino) em tempo real via internet.</span></div>
-                                <div class="req"><code>RF03</code><span>Armazenar os dados coletados em um banco de dados.</span></div>
-                                <div class="req"><code>RF04</code><span>Processar os dados para análise das condições do ambiente.</span></div>
-                                <div class="req"><code>RF05</code><span>Exibir os dados em uma plataforma web por meio de gráficos e relatórios.</span></div>
-                                <div class="req"><code>RF06</code><span>Permitir o monitoramento em tempo real do ambiente produtivo.</span></div>
-                                <div class="req"><code>RF07</code><span>Gerar alertas automáticos quando os dados estiverem fora dos padrões definidos.</span></div>
-                                <div class="req"><code>RF08</code><span>Enviar notificações para o aplicativo mobile.</span></div>
-                                <div class="req"><code>RF09</code><span>Permitir o acesso remoto às informações via aplicativo mobile.</span></div>
-                                <div class="req"><code>RF10</code><span>Permitir visualização por administrador.</span></div>
-                                <div class="req"><code>RF11</code><span>Possibilitar a geração de relatórios históricos.</span></div>
-                                <div class="req"><code>RF12</code><span>Integrar-se a sistemas já existentes (como controle de estoque), sem substituí-los.</span></div>
+                                <div class="req"><code>RF01</code><span>Coletar dados ambientais por sensores ligados a um microcontrolador: temperatura, umidade, qualidade do ar e radiação UV nos sensores físicos do protótipo; ruído e pressão são aceitos para sensores futuros.</span></div>
+                                <div class="req"><code>RF02</code><span>Receber as leituras dos dispositivos pela rede, em JSON, por uma API autenticada por chave do sensor; o administrador também pode registrar uma leitura de teste.</span></div>
+                                <div class="req"><code>RF03</code><span>Armazenar as leituras em banco de dados, mantendo o histórico: valor, data e hora, situação, limites vigentes e origem.</span></div>
+                                <div class="req"><code>RF04</code><span>Validar cada leitura, recusando valores inválidos, e classificá-la como normal, atenção ou crítica conforme os limites do sensor.</span></div>
+                                <div class="req"><code>RF05</code><span>Cadastrar, editar, ativar e desativar estoques, exibindo o estado de cada um em três dimensões: condição ambiental, comunicação dos sensores e situação cadastral.</span></div>
+                                <div class="req"><code>RF06</code><span>Cadastrar sensores vinculados a um estoque (tipo, localização, quatro limites e prazo de comunicação) e transferi-los entre estoques sem perder o histórico.</span></div>
+                                <div class="req"><code>RF07</code><span>Exibir um painel de módulos com indicadores resumidos e atalhos para cada área.</span></div>
+                                <div class="req"><code>RF08</code><span>Exibir o monitoramento com valores atuais e gráficos por variável, atualizados a cada 15 segundos, com indicação de lacunas de comunicação e aviso de falha de conexão.</span></div>
+                                <div class="req"><code>RF09</code><span>Gerar alertas automáticos (atenção ou crítico) quando uma leitura ultrapassar os limites, sem duplicar o alerta enquanto a irregularidade continuar.</span></div>
+                                <div class="req"><code>RF10</code><span>Permitir ao administrador reconhecer e resolver alertas (com observações) e criar alertas manuais; marcar o alerta como normalizado quando a leitura voltar ao normal.</span></div>
+                                <div class="req"><code>RF11</code><span>Gerar relatórios históricos com filtros, resumo estatístico e exportação integral em CSV e PDF.</span></div>
+                                <div class="req"><code>RF12</code><span>Autenticar usuários por login e senha, bloquear tentativas excessivas (cinco falhas em 15 minutos) e encerrar a sessão por inatividade.</span></div>
+                                <div class="req"><code>RF13</code><span>Controlar o acesso por perfil e por estoque: o administrador gerencia todo o sistema; o usuário consulta apenas os estoques autorizados.</span></div>
+                                <div class="req"><code>RF14</code><span>Cadastrar e editar usuários (perfil, situação e estoques autorizados), com desativação no lugar de exclusão.</span></div>
+                                <div class="req"><code>RF15</code><span>Permitir que cada usuário gerencie a própria conta: nome, senha, foto e tema (claro, escuro ou automático).</span></div>
+                                <div class="req"><code>RF16</code><span>Registrar em auditoria as ações administrativas relevantes (quem fez, o quê e quando).</span></div>
+                                <div class="req"><code>RF17</code><span>Disponibilizar uma API JSON, com autenticação por token, para o aplicativo móvel e para futuras integrações.</span></div>
+                                <div class="req"><code>RF18</code><span>Permitir o acesso remoto às informações por aplicativo móvel (estoques, sensores, alertas e relatórios).</span></div>
                             </div>
                         </div>
-
                         <div class="tabpanel" role="tabpanel" id="panel-rnf" aria-labelledby="tab-rnf" hidden>
                             <div class="req-table">
-                                <div class="req"><code>RNF01</code><span>Alta disponibilidade para monitoramento contínuo.</span></div>
-                                <div class="req"><code>RNF02</code><span>Baixo tempo de resposta na exibição de dados em tempo real.</span></div>
-                                <div class="req"><code>RNF03</code><span>Segurança dos dados (acesso controlado e proteção das informações).</span></div>
-                                <div class="req"><code>RNF04</code><span>Escalabilidade, permitindo implementação em diferentes setores da indústria.</span></div>
-                                <div class="req"><code>RNF05</code><span>Compatibilidade com dispositivos web e mobile.</span></div>
-                                <div class="req"><code>RNF06</code><span>Interface intuitiva e de fácil utilização.</span></div>
-                                <div class="req"><code>RNF07</code><span>Suporte à integração com hardware Arduino.</span></div>
-                                <div class="req"><code>RNF10</code><span>Integridade dos dados coletados.</span></div>
-                                <div class="req"><code>RNF11</code><span>Padrões básicos de confiabilidade para evitar falhas operacionais.</span></div>
+                                <div class="req"><code>RNF01</code><span>Monitoramento contínuo, informando ao usuário quando o servidor ou o banco de dados não respondem.</span></div>
+                                <div class="req"><code>RNF02</code><span>Apresentação dos dados com baixa latência.</span></div>
+                                <div class="req"><code>RNF03</code><span>Proteção dos dados e controle de acesso conforme o perfil e o estoque.</span></div>
+                                <div class="req"><code>RNF04</code><span>Expansão para novos sensores, estoques e setores.</span></div>
+                                <div class="req"><code>RNF05</code><span>Interface funcional em navegadores modernos e em dispositivos móveis.</span></div>
+                                <div class="req"><code>RNF06</code><span>Interface intuitiva, com organização clara e navegação simples.</span></div>
+                                <div class="req"><code>RNF07</code><span>Servidor que aceita leituras enviadas por microcontroladores sem conta de usuário.</span></div>
+                                <div class="req"><code>RNF08</code><span>Preservação da integridade dos dados.</span></div>
+                                <div class="req"><code>RNF09</code><span>Tratamento de erros de comunicação e de processamento sem comprometer os dados.</span></div>
+                                <div class="req"><code>RNF10</code><span>Facilidade de manter e de atualizar.</span></div>
                             </div>
-                            <p class="cmp-note">RNF08, RNF09 e RNF12 foram reclassificados como restrições e delimitações (RT01, RT02 e DL01), abaixo.</p>
                         </div>
 
-                        <h3 class="sub">Restrições e delimitações</h3>
-                        <p>Alguns itens do levantamento original descrevem limites do projeto, e não qualidades do sistema, e por isso foram reclassificados.</p>
+                        <h3 class="sub">Restrições e limites do projeto</h3>
+                        <p>Alguns itens descrevem limites do projeto, e não qualidades do sistema.</p>
                         <div class="limits">
-                            <div class="limit"><code>RT01</code><h4>Restrição tecnológica</h4><p>PHP no back-end, MySQL como banco de dados e HTML, CSS e JavaScript no front-end web.</p></div>
-                            <div class="limit"><code>RT02</code><h4>Restrição operacional</h4><p>O funcionamento adequado depende de conexão de rede estável entre dispositivos, servidor e clientes.</p></div>
-                            <div class="limit"><code>DL01</code><h4>Delimitação do projeto</h4><p>O sistema não substitui as normas regulamentadoras de segurança industrial nem os equipamentos de proteção exigidos por elas.</p></div>
+                            <div class="limit"><code>TECNOLOGIA</code><h4>Restrição tecnológica</h4><p>PHP no back-end, MySQL como banco de dados e HTML, CSS e JavaScript no front-end web.</p></div>
+                            <div class="limit"><code>OPERAÇÃO</code><h4>Restrição operacional</h4><p>O funcionamento adequado depende de conexão estável com a internet. Se o dispositivo não alcança o servidor, a leitura é descartada e o período aparece como lacuna nos gráficos.</p></div>
+                            <div class="limit"><code>ESCOPO</code><h4>Delimitação do projeto</h4><p>O sistema apoia a gestão, mas não substitui as normas regulamentadoras de segurança industrial nem os equipamentos de proteção exigidos por elas.</p></div>
                         </div>
                     </article>
-
                     <!-- DADOS -->
                     <article class="doc-section" id="dados">
                         <span class="eyebrow">Capítulo 2</span>
                         <h2>Modelagem de dados</h2>
-                        <p>Todo sistema de monitoramento é, em essência, uma máquina de produzir e consultar registros: a qualidade do banco determina a confiabilidade dos gráficos, dos alertas e dos relatórios. No modelo lógico, cada entidade vira uma tabela e cada relacionamento 1:N vira uma chave estrangeira no lado N.</p>
-                        <div class="er" role="img" aria-label="Diagrama entidade-relacionamento com as tabelas usuario, sensores, leitura_sensor e alertas">
+                        <p>Todo sistema de monitoramento é, em essência, uma máquina de produzir e consultar registros: a qualidade do banco determina a confiabilidade dos gráficos, dos alertas e dos relatórios. No modelo lógico, cada entidade vira uma tabela e cada relacionamento 1:N vira uma chave estrangeira no lado N. São oito tabelas, além de uma tabela técnica que registra as versões de atualização do banco já aplicadas.</p>
+                        <div class="er" role="img" aria-label="Diagrama entidade-relacionamento com as tabelas usuario, estoques, usuario_estoque, sensores, leitura_sensor, alertas, auditoria e tentativas_login">
+                            <div class="er-table">
+                                <h4>usuario <svg><use href="#i-db" /></svg></h4>
+                                <ul>
+                                    <li><span class="k pk">PK</span> id <em>INT</em></li>
+                                    <li>nome <em>VARCHAR</em></li>
+                                    <li><span class="k uk">UK</span> login <em>VARCHAR</em></li>
+                                    <li>senha (bcrypt) <em>VARCHAR</em></li>
+                                    <li>tipo <em>ENUM</em></li>
+                                    <li>status <em>ENUM</em></li>
+                                    <li>tema <em>ENUM</em></li>
+                                    <li>foto <em>MEDIUMTEXT</em></li>
+                                </ul>
+                            </div>
+                            <div class="er-table">
+                                <h4>estoques <svg><use href="#i-db" /></svg></h4>
+                                <ul>
+                                    <li><span class="k pk">PK</span> id <em>INT</em></li>
+                                    <li>nome <em>VARCHAR</em></li>
+                                    <li>descricao <em>TEXT</em></li>
+                                    <li>localizacao <em>VARCHAR</em></li>
+                                    <li>status <em>ENUM</em></li>
+                                    <li>criado_em <em>DATETIME</em></li>
+                                </ul>
+                            </div>
+                            <div class="er-table">
+                                <h4>usuario_estoque <svg><use href="#i-db" /></svg></h4>
+                                <ul>
+                                    <li><span class="k pk">PK</span> id <em>INT</em></li>
+                                    <li><span class="k fk">FK</span> usuario_id <em>INT</em></li>
+                                    <li><span class="k fk">FK</span> estoque_id <em>INT</em></li>
+                                    <li>criado_em <em>DATETIME</em></li>
+                                </ul>
+                            </div>
                             <div class="er-table">
                                 <h4>sensores <svg><use href="#i-db" /></svg></h4>
                                 <ul>
                                     <li><span class="k pk">PK</span> id <em>INT</em></li>
-                                    <li>nome <em>VARCHAR(100)</em></li>
+                                    <li><span class="k fk">FK</span> estoque_id <em>INT</em></li>
+                                    <li>nome <em>VARCHAR</em></li>
                                     <li>tipo <em>ENUM</em></li>
-                                    <li>localizacao <em>VARCHAR(150)</em></li>
+                                    <li>localizacao <em>VARCHAR</em></li>
                                     <li>status <em>ENUM</em></li>
-                                    <li>criado_em <em>DATETIME</em></li>
+                                    <li>limites (4) <em>DECIMAL</em></li>
+                                    <li>intervalo_comunicacao <em>INT</em></li>
+                                    <li>ultima_comunicacao <em>DATETIME</em></li>
                                 </ul>
                             </div>
                             <div class="er-table">
@@ -564,8 +606,12 @@
                                 <ul>
                                     <li><span class="k pk">PK</span> id <em>INT</em></li>
                                     <li><span class="k fk">FK</span> sensor_id <em>INT</em></li>
-                                    <li>valor <em>DECIMAL(10,2)</em></li>
+                                    <li><span class="k fk">FK</span> estoque_id <em>INT</em></li>
+                                    <li>valor <em>DECIMAL</em></li>
                                     <li>lido_em <em>DATETIME</em></li>
+                                    <li>situacao <em>ENUM</em></li>
+                                    <li>limites (4) <em>DECIMAL</em></li>
+                                    <li>origem <em>ENUM</em></li>
                                 </ul>
                             </div>
                             <div class="er-table">
@@ -573,33 +619,45 @@
                                 <ul>
                                     <li><span class="k pk">PK</span> id <em>INT</em></li>
                                     <li><span class="k fk">FK</span> sensor_id <em>INT</em></li>
+                                    <li><span class="k fk">FK</span> estoque_id <em>INT</em></li>
                                     <li>severidade <em>ENUM</em></li>
-                                    <li>mensagem <em>VARCHAR(200)</em></li>
-                                    <li>valor <em>DECIMAL(10,2)</em></li>
-                                    <li>resolvido <em>TINYINT(1)</em></li>
-                                    <li>criado_em <em>DATETIME</em></li>
+                                    <li>mensagem <em>VARCHAR</em></li>
+                                    <li>status <em>ENUM</em></li>
+                                    <li>automatico <em>TINYINT</em></li>
+                                    <li><span class="k fk">FK</span> reconhecido_por <em>INT</em></li>
                                     <li><span class="k fk">FK</span> resolvido_por <em>INT</em></li>
+                                    <li>criado_em <em>DATETIME</em></li>
                                 </ul>
                             </div>
                             <div class="er-table">
-                                <h4>usuario <svg><use href="#i-db" /></svg></h4>
+                                <h4>auditoria <svg><use href="#i-db" /></svg></h4>
                                 <ul>
-                                    <li><span class="k pk">PK</span> id <em>INT</em></li>
-                                    <li>nome <em>VARCHAR(100)</em></li>
-                                    <li><span class="k uk">UK</span> login <em>VARCHAR(100)</em></li>
-                                    <li>senha <em>VARCHAR</em></li>
-                                    <li>tipo <em>ENUM</em></li>
-                                    <li>status <em>ENUM</em></li>
+                                    <li><span class="k pk">PK</span> id <em>BIGINT</em></li>
+                                    <li><span class="k fk">FK</span> usuario_id <em>INT</em></li>
+                                    <li>acao <em>VARCHAR</em></li>
+                                    <li>descricao <em>TEXT</em></li>
+                                    <li>criado_em <em>DATETIME</em></li>
+                                </ul>
+                            </div>
+                            <div class="er-table">
+                                <h4>tentativas_login <svg><use href="#i-db" /></svg></h4>
+                                <ul>
+                                    <li><span class="k pk">PK</span> id <em>BIGINT</em></li>
+                                    <li>ip <em>VARCHAR</em></li>
+                                    <li>login <em>VARCHAR</em></li>
+                                    <li>sucesso <em>TINYINT</em></li>
+                                    <li>criado_em <em>DATETIME</em></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="rels">
+                            <span class="chip">N usuários ↔ N estoques (usuario_estoque)</span>
+                            <span class="chip">1 estoque → N sensores</span>
                             <span class="chip">1 sensor → N leituras</span>
                             <span class="chip">1 sensor → N alertas</span>
-                            <span class="chip">1 usuário → N alertas resolvidos</span>
+                            <span class="chip">1 usuário → N alertas reconhecidos e resolvidos</span>
                         </div>
                     </article>
-
                     <!-- ARQUITETURA -->
                     <article class="doc-section" id="arquitetura">
                         <span class="eyebrow">Capítulo 2</span>
@@ -609,9 +667,9 @@
                             <div class="layer"><span class="n">4</span><b>Clientes (front-end)</b><span>Sistema web, dispositivos de campo IoT e aplicativo móvel, que consome a API RESTful por JSON sobre HTTP.</span></div>
                             <div class="layer"><span class="n">3</span><b>Back-end (PHP)</b><span>Configuração, regras de negócio, validações, consultas e autenticação.</span></div>
                             <div class="layer"><span class="n">2</span><b>Acesso a dados (PDO)</b><span>Interface padronizada com o banco, usando consultas preparadas (prepared statements).</span></div>
-                            <div class="layer"><span class="n">1</span><b>Banco de dados (MySQL)</b><span>Guarda de forma permanente leituras, limites, alertas, usuários e dispositivos.</span></div>
+                            <div class="layer"><span class="n">1</span><b>Banco de dados (MySQL)</b><span>Guarda de forma permanente estoques, sensores, leituras, alertas, usuários, vínculos de acesso, auditoria e tentativas de login.</span></div>
                         </div>
-                        <div class="callout" style="margin-top:28px"><b>Segurança por projeto.</b> Com PDO, o comando SQL e os valores viajam separados: mesmo que um valor malicioso chegue ao sistema, ele é tratado como dado e nunca como parte do comando, o que evita injeção de SQL. As senhas são guardadas como hash (<code>password_hash</code> / <code>password_verify</code>), e o acesso é controlado por perfil.</div>
+                        <div class="callout" style="margin-top:28px"><b>Segurança por projeto.</b> Com PDO, o comando SQL e os valores viajam separados: mesmo que um valor malicioso chegue ao sistema, ele é tratado como dado e nunca como parte do comando, o que evita injeção de SQL. As senhas são guardadas como hash (<code>password_hash</code> / <code>password_verify</code>), o acesso é controlado por perfil e por estoque, e os formulários usam token CSRF.</div>
                     </article>
 
                     <article class="doc-section" id="comunicacao">
@@ -620,14 +678,14 @@
                         <p>Os dispositivos enviam as leituras por requisições HTTP, em formato JSON, a uma API RESTful. A escolha é simples de implementar em microcontroladores, atravessa a maioria das redes corporativas e permite usar o mesmo servidor PHP para dispositivos, web e aplicativo.</p>
                         <h3 class="sub">O que o servidor faz ao receber uma leitura</h3>
                         <ol class="steps7">
-                            <li><b>Autentica</b> o dispositivo.</li>
-                            <li><b>Valida o formato</b> da mensagem.</li>
-                            <li><b>Confere a faixa física plausível</b> do sensor (por exemplo, rejeita umidade acima de 100%).</li>
-                            <li><b>Converte unidades</b> quando necessário.</li>
-                            <li><b>Grava</b> a leitura no banco de dados.</li>
-                            <li><b>Compara com o limite</b> e, se violado, gera o alerta.</li>
-                            <li><b>Responde</b> ao dispositivo com um código que informa o resultado.</li>
+                            <li><b>Autentica</b> o remetente: pela chave do sensor, enviada em cabeçalho, ou por token do administrador.</li>
+                            <li><b>Valida o formato</b> da mensagem (sensor e valor numérico).</li>
+                            <li><b>Confere</b> se o sensor existe e está ativo.</li>
+                            <li><b>Grava</b> a leitura, em uma única transação, com os limites vigentes, a situação (normal, atenção ou crítica) e a origem; atualiza a última comunicação do sensor e cria ou atualiza o alerta, sem duplicar.</li>
+                            <li><b>Registra</b> a ação.</li>
+                            <li><b>Responde</b> ao dispositivo em JSON, com um código que informa o resultado.</li>
                         </ol>
+                        <p style="margin-top:18px">O intervalo padrão de envio é de 5 minutos e pode ser configurado por sensor. Se um sensor ativo passa do dobro do intervalo sem enviar dados, ele é marcado como sem comunicação e o período aparece como lacuna nos gráficos. Se o dispositivo não alcança o servidor, a leitura não é guardada para envio posterior. Nos testes, o tráfego foi HTTP simples, em ambiente local; para uso real, recomenda-se HTTPS.</p>
                     </article>
 
                     <!-- TELAS -->
@@ -636,44 +694,63 @@
                         <h2>Apresentação da aplicação</h2>
                         <p>As telas exibem as informações coletadas pelos sensores de forma organizada e facilitam o acompanhamento das condições do ambiente. Veja-as em funcionamento no <a href="index.html#video" style="text-decoration:underline;text-underline-offset:3px;color:var(--brand)">vídeo de apresentação</a>.</p>
                         <div class="screens">
-                            <div class="screen"><small>4.1</small><h3>Login</h3><p>Entrada com e-mail e senha; define o perfil (usuário ou administrador), que determina o que a pessoa pode ver e fazer.</p></div>
-                            <div class="screen"><small>4.2</small><h3>Dashboard</h3><p>Panorama geral: valor atual de cada grandeza, estado (normal ou alerta) e os alertas mais recentes.</p></div>
-                            <div class="screen"><small>4.3</small><h3>Monitoramento</h3><p>Dados por dispositivo e por sensor, com unidade, horário da última leitura e indicação de estado.</p></div>
-                            <div class="screen"><small>4.4</small><h3>Gráficos e histórico</h3><p>Variações ao longo do tempo, com escolha de sensor e período.</p></div>
-                            <div class="screen"><small>4.5</small><h3>Configuração de limites</h3><p>O administrador define mínimo e máximo por sensor; limites incoerentes são impedidos.</p></div>
-                            <div class="screen"><small>4.6</small><h3>Alertas</h3><p>Sensor, valor, limite violado e horário de cada situação fora do padrão.</p></div>
-                            <div class="screen"><small>4.7</small><h3>Relatórios</h3><p>Relatório histórico por período e sensores, com tabela e resumo estatístico.</p></div>
-                            <div class="screen"><small>4.8</small><h3>Administrativa</h3><p>Gestão de usuários, dispositivos e sensores, acessível apenas ao perfil administrador.</p></div>
-                            <div class="screen"><small>4.9</small><h3>Aplicativo móvel</h3><p>O essencial do monitoramento no celular: login, leituras atuais, gráficos e alertas, com tema claro e escuro.</p></div>
+                            <div class="screen"><small>4.1.1</small><h3>Login</h3><p>Entrada com login e senha (não e-mail); define o perfil. Credenciais inválidas e contas inativas recebem a mesma mensagem, e após cinco falhas em 15 minutos o acesso é bloqueado por um tempo.</p></div>
+                            <div class="screen"><small>4.1.2</small><h3>Painel de módulos</h3><p>Tela inicial, em grupos (Monitoramento, Gestão e Pessoal), com indicadores reais como a quantidade de estoques, sensores e alertas ativos.</p></div>
+                            <div class="screen"><small>4.1.3</small><h3>Estoques</h3><p>Cartões com sensores, alertas ativos e três indicadores: condição ambiental, comunicação dos sensores e situação cadastral.</p></div>
+                            <div class="screen"><small>4.1.4</small><h3>Sensores</h3><p>Tipo, localização, estoque, último valor, comunicação e limites. O administrador cadastra, ativa, desativa e transfere sensores sem perder o histórico.</p></div>
+                            <div class="screen"><small>4.1.5</small><h3>Monitoramento</h3><p>Valores atuais e gráficos por variável, com escolha de tipos e janela de tempo, lacunas de comunicação e atualização a cada 15 segundos.</p></div>
+                            <div class="screen"><small>4.1.6</small><h3>Alertas</h3><p>Lista por estado (pendente, reconhecido, normalizado e resolvido) e por severidade; o administrador reconhece, resolve e cria alertas manuais.</p></div>
+                            <div class="screen"><small>4.1.7</small><h3>Relatórios</h3><p>Filtros por estoque, sensor, tipo, período e faixa de valores, com resumo estatístico e exportação integral em CSV e PDF.</p></div>
+                            <div class="screen"><small>4.1.8</small><h3>Usuários e acessos</h3><p>Só para o administrador: cadastra e edita usuários, define perfil e estoques autorizados e desativa em vez de excluir.</p></div>
+                            <div class="screen"><small>4.1.9</small><h3>Minha conta</h3><p>Perfil (nome e foto), aparência (tema claro, escuro ou automático), segurança (troca de senha) e acessos.</p></div>
+                            <div class="screen"><small>4.1.10</small><h3>Atualização do banco</h3><p>Para o administrador: aplica a migração que atualiza uma instalação antiga, com confirmação de backup, e pode ser repetida sem alterar o que já foi atualizado.</p></div>
+                            <div class="screen"><small>4.2</small><h3>Aplicativo móvel</h3><p>Reproduz as funções da web no celular (login com endereço do servidor, painel, gráficos, alertas, relatório, sensores e gestão de usuários), em tema claro e escuro. Sem gestão de dispositivos nem envio de comandos.</p></div>
                         </div>
                     </article>
-
+                    <!-- TESTES -->
+                    <article class="doc-section" id="testes">
+                        <span class="eyebrow">Capítulo 3</span>
+                        <h2>Testes e validação</h2>
+                        <p>Os testes foram automatizados por scripts, com bancos descartáveis e dados de teste e de demonstração, e não dados de produção. Foram executados com PHP 8.3, MariaDB, Apache 2.4 e Chromium automatizado (Playwright), em máquina de desenvolvimento.</p>
+                        <div class="obj-grid">
+                            <div class="obj"><b>75</b><p><strong>API:</strong> autenticação, acesso por estoque, limites, recebimento de leituras, ciclo dos alertas e exportação. Todas aprovadas.</p></div>
+                            <div class="obj"><b>42</b><p><strong>Conta e relatórios:</strong> senha, tema, foto, seis tipos de sensor, histórico, CSV e PDF. Todas aprovadas.</p></div>
+                            <div class="obj"><b>182</b><p><strong>Interface:</strong> desktop, tablet e celular, nos temas claro e escuro, sem erro de JavaScript e sem rolagem horizontal. Todas aprovadas.</p></div>
+                            <div class="obj"><b>6</b><p><strong>Atualização automática:</strong> nova leitura no ciclo de 15 s, gráfico atualizado, falha de conexão sinalizada e recuperação. Todas aprovadas.</p></div>
+                        </div>
+                        <p style="margin-top:18px">Houve ainda testes de migração do banco, de bloqueio de login e de acesso às pastas internas, todos com o comportamento esperado.</p>
+                        <div class="callout" style="margin-top:20px"><b>Limites da validação.</b> Os testes enviaram leituras pela API a um banco de teste, sem sensores físicos conectados. O código do aplicativo móvel não fez parte da validação, e não houve teste de usabilidade com usuários nem de desempenho sob carga.</div>
+                    </article>
                     <!-- CONCLUSÃO -->
                     <article class="doc-section" id="conclusao">
                         <span class="eyebrow">Capítulo 5</span>
                         <h2>Considerações finais</h2>
                         <p>O desenvolvimento do Ákron possibilitou aplicar os conhecimentos do curso, principalmente em programação, banco de dados, desenvolvimento web e Internet das Coisas. Mais do que reunir tecnologias, o projeto exigiu integrá-las: um dado nasce em um sensor, atravessa um microcontrolador, uma rede, um servidor e um banco, e termina em uma tela ou em um aviso no celular.</p>
-                        <div class="callout gold"><b>Limites declarados.</b> O Ákron foi validado em ambiente simulado, e não em uma indústria real. Os sensores usados são de baixo custo e não substituem instrumentos certificados. Melhorias de produtividade, aumento da segurança ou redução de custos são benefícios esperados, fundamentados na literatura, e não resultados medidos neste trabalho: o que o projeto comprova é o funcionamento técnico do protótipo, nos limites do ambiente simulado.</div>
+                        <div class="callout gold"><b>Limites declarados.</b> O Ákron foi validado em ambiente simulado, e não em uma indústria real. Os sensores usados são de baixo custo e não substituem instrumentos certificados. Melhorias de produtividade, aumento da segurança ou redução de custos são benefícios esperados, fundamentados na literatura, e não resultados medidos neste trabalho: o que o projeto comprova é o funcionamento técnico do protótipo, nos limites do ambiente simulado. Dois pontos ficam em aberto: a coleta de ponta a ponta com os sensores físicos e o aplicativo móvel não fizeram parte das suítes automatizadas.</div>
                         <div class="lists-2">
                             <div class="panel">
                                 <h3><svg><use href="#i-shield" /></svg> Limitações</h3>
                                 <ul>
                                     <li>Validação em ambiente simulado, não em indústria real.</li>
-                                    <li>Sensores de baixo custo, sem calibração com instrumentos certificados.</li>
-                                    <li>O sistema apoia a gestão, mas não substitui as normas regulamentadoras de segurança industrial (DL01).</li>
-                                    <li>A integração com sistemas externos não representa integração com sistemas empresariais completos.</li>
+                                    <li>Ruído e pressão sem sensor físico no protótipo; qualidade do ar (MQ135) depende de conversão e calibração; o DHT11 não mede abaixo de 0 °C.</li>
+                                    <li>Sensores de baixo custo, sem calibração com instrumentos certificados; o sistema apoia a gestão, mas não substitui as normas regulamentadoras de segurança industrial.</li>
+                                    <li>Sem notificação push, e-mail ou som; chave de sensor única e compartilhada; tráfego em HTTP no ambiente de teste.</li>
+                                    <li>Aplicativo móvel fora das suítes de teste e sem teste de usabilidade com usuários.</li>
+                                    <li>A integração com sistemas externos foi demonstrada apenas pela API consumida pelo aplicativo.</li>
                                 </ul>
                             </div>
                             <div class="panel">
                                 <h3><svg><use href="#i-peak" /></svg> Trabalhos futuros</h3>
                                 <ul>
-                                    <li>Novos sensores e novas variáveis.</li>
+                                    <li>Notificações push no aplicativo.</li>
+                                    <li>Uma chave por sensor, HTTPS e restrição de CORS.</li>
+                                    <li>Sensores de ruído e de pressão, e sensores com maior precisão e calibração.</li>
+                                    <li>Política de retenção e arquivamento dos dados.</li>
                                     <li>Análise preditiva: identificar tendências antes de o limite ser atingido.</li>
+                                    <li>Controle de atuadores e gestão de dispositivos.</li>
                                     <li>Integração real com ERP e controle de estoque.</li>
-                                    <li>Ampliação do controle de atuadores.</li>
-                                    <li>HTTPS e mecanismos de segurança mais robustos.</li>
                                     <li>Aplicativo publicado para Android e iOS.</li>
-                                    <li>Validação em ambiente industrial real.</li>
+                                    <li>Validação em ambiente industrial real, com calibração por instrumentos certificados.</li>
                                 </ul>
                             </div>
                         </div>
