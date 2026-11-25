@@ -119,7 +119,7 @@
                 <div>
                     <span class="pill reveal"><span class="dot"></span> TCC da Athenas · SENAI Mococa-SP · 2026</span>
                     <h1 class="reveal" style="--d:.08s">A <em>visão do alto</em> do seu ambiente de produção.</h1>
-                    <p class="hero-lead reveal" style="--d:.16s">O <strong>Ákron</strong> coleta, armazena e exibe, organizados por estoque, temperatura, umidade, qualidade do ar e radiação UV (ruído e pressão também são aceitos pelo sistema), e avisa o gestor quando um limite é ultrapassado. <em>Inteligência e Monitoramento para a Indústria.</em></p>
+                    <p class="hero-lead reveal" style="--d:.16s">O <strong>Ákron</strong> coleta, armazena e exibe, organizados por estoque, temperatura, umidade, qualidade do ar e radiação UV, e avisa o gestor quando um limite é ultrapassado. <em>Inteligência e Monitoramento para a Indústria.</em></p>
                     <div class="hero-actions reveal" style="--d:.24s">
                         <a href="index.html#video" class="btn btn-primary">
                             <svg style="width:16px;height:16px"><use href="#i-play" /></svg> Assistir ao vídeo
@@ -127,7 +127,7 @@
                         <a href="akron/" class="btn btn-access">Ir para o sistema <svg class="arrow"><use href="#i-arrow" /></svg></a>
                     </div>
                     <div class="hero-facts reveal" style="--d:.32s">
-                        <div><strong><span data-count="6">0</span></strong><span>tipos de sensor tratados</span></div>
+                        <div><strong><span data-count="4">0</span></strong><span>variáveis monitoradas</span></div>
                         <div><strong><span data-count="2">0</span></strong><span>plataformas: web e mobile</span></div>
                         <div><strong><span data-count="9">0</span></strong><span>objetivos específicos</span></div>
                     </div>
@@ -155,21 +155,9 @@
                                     <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d=""/></svg>
                                     <div class="tile-state">Normal</div>
                                 </div>
-                                <div class="tile" data-k="ruido" data-base="68" data-var="3" data-lim="85" data-dec="0">
-                                    <div class="tile-top">Ruído <svg><use href="#i-noise" /></svg></div>
-                                    <div class="tile-val"><span>68</span><small>dB</small></div>
-                                    <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d=""/></svg>
-                                    <div class="tile-state">Normal</div>
-                                </div>
                                 <div class="tile" data-k="ar" data-base="42" data-var="3" data-lim="100" data-dec="0">
                                     <div class="tile-top">Qual. do ar <svg><use href="#i-wind" /></svg></div>
                                     <div class="tile-val"><span>42</span><small>AQI</small></div>
-                                    <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d=""/></svg>
-                                    <div class="tile-state">Normal</div>
-                                </div>
-                                <div class="tile" data-k="pres" data-base="1013" data-var="1.2" data-lim="1030" data-dec="0">
-                                    <div class="tile-top">Pressão <svg><use href="#i-gauge" /></svg></div>
-                                    <div class="tile-val"><span>1013</span><small>hPa</small></div>
                                     <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d=""/></svg>
                                     <div class="tile-state">Normal</div>
                                 </div>
@@ -224,7 +212,7 @@
                         <span class="eyebrow">O desafio</span>
                         <h2 class="section-title">A empresa sabe quanto produziu. Mas e o ambiente agora?</h2>
                         <p class="section-lead">Boa parte das indústrias já tem sistemas consolidados de gestão, como estoque, planejamento de produção e ERP. Mesmo assim, ainda faltam informações em tempo real sobre as condições físicas do ambiente em que se produz.</p>
-                        <p class="problem-quote">“Sabe quanto estoque tem e quanto produziu, mas nem sempre sabe, no mesmo instante, se a temperatura está acima do tolerável ou se o ruído passou do limite.”</p>
+                        <p class="problem-quote">“Sabe quanto estoque tem e quanto produziu, mas nem sempre sabe, no mesmo instante, se a temperatura está acima do tolerável ou se a qualidade do ar piorou.”</p>
                     </div>
                     <div class="problem-list">
                         <article class="problem-item reveal"><span class="n">01</span><div><h3>Monitoramento contínuo</h3><p>Muitas medições ainda são feitas de forma manual e periódica, deixando lacunas entre uma verificação e outra.</p></div></article>
@@ -246,7 +234,7 @@
                     <article class="card reveal" style="--d:.08s">
                         <div class="icon-chip gold"><svg><use href="#i-shield" /></svg></div>
                         <h3>Para quem trabalha</h3>
-                        <p>Temperatura inadequada, ruído elevado e má qualidade do ar podem afetar a produtividade e a saúde. Monitorar essas condições de forma contínua é um passo para ambientes mais seguros e confortáveis, sem substituir as normas regulamentadoras de segurança.</p>
+                        <p>Temperaturas elevadas e baixa qualidade do ar podem afetar a produtividade e a saúde. Monitorar essas condições de forma contínua é um passo para ambientes mais seguros e confortáveis, sem substituir as normas regulamentadoras de segurança.</p>
                     </article>
                     <article class="card reveal" style="--d:.16s">
                         <div class="icon-chip"><svg><use href="#i-book" /></svg></div>
@@ -302,12 +290,10 @@
                 <div class="sensors" aria-label="Variáveis monitoradas">
                     <div class="sensor reveal"><svg><use href="#i-temp" /></svg><strong>Temperatura</strong><span>°C</span></div>
                     <div class="sensor reveal" style="--d:.05s"><svg><use href="#i-drop" /></svg><strong>Umidade</strong><span>%</span></div>
-                    <div class="sensor reveal" style="--d:.1s"><svg><use href="#i-noise" /></svg><strong>Ruído</strong><span>dB · via API</span></div>
                     <div class="sensor reveal" style="--d:.15s"><svg><use href="#i-wind" /></svg><strong>Qualidade do ar</strong><span>AQI</span></div>
-                    <div class="sensor reveal" style="--d:.2s"><svg><use href="#i-gauge" /></svg><strong>Pressão</strong><span>hPa · via API</span></div>
                     <div class="sensor reveal" style="--d:.25s"><svg><use href="#i-uv" /></svg><strong>Radiação UV</strong><span>índice</span></div>
                 </div>
-                <p class="cmp-note reveal" style="margin-top:20px">Protótipo físico: ESP32 DevKit V1 com os sensores DHT11 (temperatura e umidade), GUVA-S12SD (radiação UV) e MQ135 (qualidade do ar), montados em protoboards com cabos jumper, sem solda. Ruído e pressão são aceitos pelo sistema, mas não têm sensor físico no protótipo: foram exercitados com dados enviados pela API. Os valores de UV e de qualidade do ar são brutos e exigem conversão e calibração. Nesta versão, o código do ESP32 exibe as leituras em uma página local; o envio automático à API depende de uma integração adicional.</p>
+                <p class="cmp-note reveal" style="margin-top:20px">Protótipo físico: ESP32 DevKit V1 com os sensores DHT11 (temperatura e umidade), GUVA-S12SD (radiação UV) e MQ135 (qualidade do ar), montados em protoboards com cabos jumper, sem solda. Os valores de UV e de qualidade do ar são brutos e exigem conversão e calibração. Nesta versão, o código do ESP32 exibe as leituras em uma página local; o envio automático à API depende de uma integração adicional.</p>
             </div>
         </section>
 
@@ -341,7 +327,7 @@
                         <p>Quando uma leitura ultrapassa o limite, o Ákron cria o alerta sozinho, sem duplicá-lo enquanto a irregularidade continuar. O administrador reconhece, resolve com observações ou registra alertas manuais; se a leitura voltar ao normal, o alerta é marcado como normalizado.</p>
                         <div class="mini-alerts">
                             <div class="mini-alert"><span class="sev c">Crítico</span><span>Temperatura acima de 35 °C no Estoque A</span></div>
-                            <div class="mini-alert"><span class="sev w">Atenção</span><span>Ruído acima de 85 dB na prensa</span></div>
+                            <div class="mini-alert"><span class="sev w">Atenção</span><span>Umidade acima do limite de atenção</span></div>
                             <div class="mini-alert"><span class="sev i">Info</span><span>Leitura de qualidade do ar registrada</span></div>
                         </div>
                     </article>
@@ -449,7 +435,7 @@
                     <article class="doc-section" id="resumo">
                         <span class="eyebrow">Resumo</span>
                         <h2>O que é o Ákron</h2>
-                        <p>Este trabalho apresenta o desenvolvimento do Ákron, um sistema de monitoramento ambiental de estoques e ambientes de produção integrado à gestão industrial, criado pela Athenas Desenvolvimento de Sistemas. O projeto parte da dificuldade que muitas empresas enfrentam para acompanhar continuamente as condições físicas dos locais onde produzem e armazenam (temperatura, umidade, qualidade do ar, ruído, pressão e radiação ultravioleta), fatores que podem afetar a conservação dos produtos, a eficiência operacional e a segurança dos trabalhadores.</p>
+                        <p>Este trabalho apresenta o desenvolvimento do Ákron, um sistema de monitoramento ambiental de estoques e ambientes de produção integrado à gestão industrial, criado pela Athenas Desenvolvimento de Sistemas. O projeto parte da dificuldade que muitas empresas enfrentam para acompanhar continuamente as condições físicas dos locais onde produzem e armazenam (temperatura, umidade, qualidade do ar e radiação ultravioleta), fatores que podem afetar a conservação dos produtos, a eficiência operacional e a segurança dos trabalhadores.</p>
                         <p>O objetivo foi desenvolver uma solução integrada para coleta, armazenamento, análise e visualização desses dados, com alertas quando os valores ultrapassam limites definidos para cada sensor. A metodologia seguiu princípios da Engenharia de Software e da gestão ágil (Scrum). A solução é composta por um microcontrolador ESP32 ligado a sensores DHT11 (temperatura e umidade), GUVA-S12SD (radiação UV) e MQ135 (qualidade do ar), que envia as medições por HTTP, em formato JSON, a uma API desenvolvida em PHP. Os dados são gravados em MySQL (acesso por PDO, com consultas preparadas), organizados por estoque e apresentados em uma plataforma web (HTML, CSS e JavaScript) e em um aplicativo móvel. O sistema classifica cada leitura em normal, atenção ou crítico, gera alertas sem duplicá-los, controla o acesso por perfil e por estoque e exporta relatórios em CSV e PDF.</p>
                         <p>As suítes de testes automatizados, executadas em ambiente de teste, foram concluídas sem falhas, o que comprova o funcionamento das funções implementadas com dados de teste e de demonstração. A validação em uma indústria real, com sensores calibrados, permanece como etapa futura.</p>
                         <div class="profile-row" style="padding-top:8px">
@@ -464,7 +450,7 @@
                         <div class="callout gold"><b>Objetivo geral.</b> Desenvolver um sistema integrado de monitoramento ambiental de estoques e ambientes de produção aplicado à gestão industrial, com foco no recebimento, na análise e na visualização de dados ambientais em tempo quase real, visando apoiar a conservação dos produtos, a eficiência operacional, a segurança dos trabalhadores e a tomada de decisão.</div>
                         <h3 class="sub">Objetivos específicos</h3>
                         <div class="obj-grid">
-                            <div class="obj"><b>OE1</b><p>Coletar dados ambientais por meio de sensores IoT conectados a um microcontrolador (ESP32), medindo temperatura, umidade, qualidade do ar e radiação ultravioleta, com suporte no sistema também a ruído e pressão.</p></div>
+                            <div class="obj"><b>OE1</b><p>Coletar dados ambientais por meio de sensores IoT conectados a um microcontrolador (ESP32), medindo temperatura, umidade, qualidade do ar e radiação ultravioleta.</p></div>
                             <div class="obj"><b>OE2</b><p>Transmitir as medições a um servidor por meio da rede e armazená-las em banco de dados, mantendo o histórico.</p></div>
                             <div class="obj"><b>OE3</b><p>Organizar o monitoramento por estoques, vinculando os sensores a cada estoque e restringindo o acesso dos usuários aos estoques autorizados.</p></div>
                             <div class="obj"><b>OE4</b><p>Apresentar os dados em uma plataforma web, por meio de painel, monitoramento e gráficos que facilitem a interpretação.</p></div>
@@ -505,7 +491,7 @@
 
                         <div class="tabpanel" role="tabpanel" id="panel-rf" aria-labelledby="tab-rf">
                             <div class="req-table">
-                                <div class="req"><code>RF01</code><span>Coletar dados ambientais por sensores ligados a um microcontrolador: temperatura, umidade, qualidade do ar e radiação UV nos sensores físicos do protótipo; ruído e pressão são aceitos para sensores futuros.</span></div>
+                                <div class="req"><code>RF01</code><span>Coletar dados ambientais por sensores ligados a um microcontrolador: temperatura, umidade, qualidade do ar e radiação UV.</span></div>
                                 <div class="req"><code>RF02</code><span>Receber as leituras dos dispositivos pela rede, em JSON, por uma API autenticada por chave do sensor; o administrador também pode registrar uma leitura de teste.</span></div>
                                 <div class="req"><code>RF03</code><span>Armazenar as leituras em banco de dados, mantendo o histórico: valor, data e hora, situação, limites vigentes e origem.</span></div>
                                 <div class="req"><code>RF04</code><span>Validar cada leitura, recusando valores inválidos, e classificá-la como normal, atenção ou crítica conforme os limites do sensor.</span></div>
@@ -714,7 +700,7 @@
                         <p>Os testes foram automatizados por scripts, com bancos descartáveis e dados de teste e de demonstração, e não dados de produção. Foram executados com PHP 8.3, MariaDB, Apache 2.4 e Chromium automatizado (Playwright), em máquina de desenvolvimento.</p>
                         <div class="obj-grid">
                             <div class="obj"><b>75</b><p><strong>API:</strong> autenticação, acesso por estoque, limites, recebimento de leituras, ciclo dos alertas e exportação. Todas aprovadas.</p></div>
-                            <div class="obj"><b>42</b><p><strong>Conta e relatórios:</strong> senha, tema, foto, seis tipos de sensor, histórico, CSV e PDF. Todas aprovadas.</p></div>
+                            <div class="obj"><b>42</b><p><strong>Conta e relatórios:</strong> senha, tema, foto, tipos de sensor, histórico, CSV e PDF. Todas aprovadas.</p></div>
                             <div class="obj"><b>182</b><p><strong>Interface:</strong> desktop, tablet e celular, nos temas claro e escuro, sem erro de JavaScript e sem rolagem horizontal. Todas aprovadas.</p></div>
                             <div class="obj"><b>6</b><p><strong>Atualização automática:</strong> nova leitura no ciclo de 15 s, gráfico atualizado, falha de conexão sinalizada e recuperação. Todas aprovadas.</p></div>
                         </div>
@@ -732,7 +718,7 @@
                                 <h3><svg><use href="#i-shield" /></svg> Limitações</h3>
                                 <ul>
                                     <li>Validação em ambiente simulado, não em indústria real.</li>
-                                    <li>Ruído e pressão sem sensor físico no protótipo; qualidade do ar (MQ135) depende de conversão e calibração; o DHT11 não mede abaixo de 0 °C.</li>
+                                    <li>Qualidade do ar (MQ135) depende de conversão e calibração; o DHT11 não mede abaixo de 0 °C.</li>
                                     <li>Sensores de baixo custo, sem calibração com instrumentos certificados; o sistema apoia a gestão, mas não substitui as normas regulamentadoras de segurança industrial.</li>
                                     <li>Sem notificação push, e-mail ou som; chave de sensor única e compartilhada; tráfego em HTTP no ambiente de teste.</li>
                                     <li>Aplicativo móvel fora das suítes de teste e sem teste de usabilidade com usuários.</li>
@@ -744,7 +730,7 @@
                                 <ul>
                                     <li>Notificações push no aplicativo.</li>
                                     <li>Uma chave por sensor, HTTPS e restrição de CORS.</li>
-                                    <li>Sensores de ruído e de pressão, e sensores com maior precisão e calibração.</li>
+                                    <li>Novos sensores e novas variáveis, e sensores com maior precisão e calibração.</li>
                                     <li>Política de retenção e arquivamento dos dados.</li>
                                     <li>Análise preditiva: identificar tendências antes de o limite ser atingido.</li>
                                     <li>Controle de atuadores e gestão de dispositivos.</li>
